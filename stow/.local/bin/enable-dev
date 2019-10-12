@@ -5,8 +5,10 @@
 set -e
 
 sudo pacman -Sy --noconfirm --needed \
-    git highlight tidy jq xmlstarlet \
-    nodejs npm python python-pip vim neovim ctags
+    vim neovim ctags git words aspell-en \
+    highlight tidy dos2unix jq markdown xmlstarlet \
+    nodejs npm python python-pip
+
 
 enable-node
 enable-python

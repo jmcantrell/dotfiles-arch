@@ -19,13 +19,10 @@ $pacman \
     cpio lha xz lzop unace unrar
 
 # editing
-$pacman \
-    vim ctags git \
-    words aspell-en \
-    dos2unix jq markdown xmlstarlet
+$pacman vim words aspell-en
 
 # web browsing
-$pacman curl lynx wget whois
+$pacman curl lynx wget whois newsboat
 
 # firewall
 $pacman iptables ebtables openvpn
@@ -34,7 +31,7 @@ $pacman iptables ebtables openvpn
 $pacman \
     acpi lshw lsof socat \
     bridge-utils dnsmasq \
-    inotify-tools glances
+    inotify-tools glances ncdu
 
 $pacman aria2 stow
 
