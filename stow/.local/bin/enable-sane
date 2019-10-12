@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Install and configure document scanning support.
+
+set -e
+
+pacman="sudo pacman -S --noconfirm --needed"
+
+$pacman sane
+
+sudo gpasswd -a "$USER" scanner
+
+has xinit || exit 0
+
+$pacman xsane xsane-gimp simple-scan

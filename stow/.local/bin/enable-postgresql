@@ -1,0 +1,36 @@
+#!/usr/bin/env sh
+
+# Install and configure postgresql database.
+
+set -e
+
+sudo pacman -S --noconfirm --needed postgresql
+
+user=postgres
+echo -e "$user\n$user" | sudo passwd "$user" &>/dev/null
+echo "Database password for user '$user' set to '$user'" >&2
+
+postgres=/var/lib/postgres
+data=$postgres/data
+config=$data/postgresql.conf
+
+# disable btrfs copy-on-write for database dir
+fstype=`mount | grep " /var " | cut -d' ' -f5`
+test "$fstype" = btrfs && sudo chattr +C "$postgres"
+
+sudo -u postgres -i initdb --locale "$LANG" -E UTF8 -D "$data"
+
+enable_line() {
+    sudo sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$config"
+}
+
+# store stats in memory instead of disk
+enable_line stats_temp_directory "'/run/postgresql'"
+
+# speed up commits
+enable_line synchronous_commit off
+
+sudo systemctl enable --now postgresql.service
+
+# create database user for me
+sudo -u postgres -i createuser -drs "$USER"

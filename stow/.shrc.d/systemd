@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+# inform systemctl of my path variable
+systemctl --user import-environment PATH
+
+alias sys=systemctl
+alias sys!='sudo systemctl'
+
+alias syss='systemctl status --all'
+alias sysu='systemctl --user status --all'
+
+# show installed unit files
+alias sysls='systemctl list-unit-files'
+
+# show failed units
+alias syslf='systemctl --failed'
+
+# show all units and information
+alias sysla='systemctl list-units --all'

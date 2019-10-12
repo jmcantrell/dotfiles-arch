@@ -1,0 +1,41 @@
+#!/usr/bin/env sh
+
+# Install and configure command line tools.
+
+set -e
+
+pacman="sudo pacman -S --noconfirm --needed"
+pacaur="pacaur -y --color=auto --noedit"
+
+# shells
+$pacman \
+    bash bash-completion \
+    zsh zsh-completions \
+    openssh tmux ranger
+
+# file compression
+$pacman \
+    atool bzip2 gzip zip unzip p7zip tar \
+    cpio lha xz lzop unace unrar
+
+# editing
+$pacman \
+    vim ctags git \
+    words aspell-en \
+    dos2unix jq markdown xmlstarlet
+
+# web browsing
+$pacman curl lynx wget whois
+
+# firewall
+$pacman iptables ebtables openvpn
+
+# system
+$pacman \
+    acpi lshw lsof socat \
+    bridge-utils dnsmasq \
+    inotify-tools glances
+
+$pacman aria2 stow
+
+$pacaur direnv

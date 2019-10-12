@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+alias j='journalctl -q'
+
+# show messages from boot
+alias jb='journalctl -b'
+
+# show messages for unit
+alias ju='journalctl -u'
+
+# follow recent messages
+alias jf='journalctl -fb'
+
+# show logged boots
+alias jlb='journalctl --list-boots'

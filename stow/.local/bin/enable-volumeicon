@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Install and configure a tray icon to control the sound mixer.
+
+set -e
+
+has xinit || exit 0
+
+# check for available sound devices
+if test "`pactl list short sinks | wc -l`" -eq 0; then
+    sudo pacman -S --noconfirm --needed volumeicon
+    exec dex $HOME/.config/autostart/volumeicon.desktop &
+fi

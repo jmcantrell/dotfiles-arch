@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed redis
+sudo systemctl enable --now redis.service

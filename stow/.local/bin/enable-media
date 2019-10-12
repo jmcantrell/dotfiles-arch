@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+# Install and configure media codecs, viewers, and tools.
+
+set -e
+
+# audio codecs
+sudo pacman -Sy --noconfirm --needed \
+    id3 id3lib taglib lame mp3gain \
+    libvorbis speex vorbisgain \
+    a52dec faac faad2 flac libdca libmad \
+    wavpack musepack-tools opusfile opus-tools
+
+# video codecs
+sudo pacman -Sy --noconfirm --needed \
+    libdv libmpeg2 libtheora \
+    libx264 libxv xvidcore \
+    mkvtoolnix-cli
+
+# image tools
+sudo pacman -Sy --noconfirm --needed \
+    imagemagick optipng gifsicle ffmpeg mpg123 sox mediainfo aria2
+
+# audio/video tools
+sudo pacman -Sy --noconfirm --needed \
+    ffmpeg mpg123 sox mediainfo

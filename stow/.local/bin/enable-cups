@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+# Install and configure printing support.
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed \
+    cups cups-pdf foomatic-db foomatic-db-engine \
+    foomatic-db-{ppds,nonfree-ppds,gutenprint-ppds} \
+    gutenprint ghostscript
+
+# discover network printers
+sudo systemctl --now enable org.cups.cupsd.service

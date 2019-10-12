@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+# Install and configure localhost as a virtualbox guest.
+
+set -e
+
+sudo pacman -S --noconfirm --needed \
+    virtualbox-guest-{utils,modules-arch}
+
+sudo systemctl --now enable vboxservice.service
+sudo modprobe -a vboxguest vboxsf vboxvideo

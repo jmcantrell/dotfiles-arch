@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+# Install and configure service discovery.
+# Enables automatic <host>.local dns lookup.
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed avahi nss-mdns polkit
+
+config=/etc/nsswitch.conf
+hosts="mdns_minimal [NOTFOUND=return]"
+
+# make sure it hasn't already been added
+if ! grep -q mdns_minimal "$config"; then
+    sudo sed -i "/^hosts:/s/\bresolve\b/$hosts resolve/" "$config"
+fi
+
+sudo systemctl --now enable avahi-daemon.service

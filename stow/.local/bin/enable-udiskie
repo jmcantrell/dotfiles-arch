@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+# Configure storage device automounting.
+
+set -e
+
+has xinit || exit 0
+
+sudo pacman -S --noconfirm --needed udiskie
+
+# friendlier access to udiskie removable disks
+ln -svfT "/run/media/$USER" "$HOME/.local/media"
+
+exec dex $HOME/.config/autostart/udiskie.desktop &

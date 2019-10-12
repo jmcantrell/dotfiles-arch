@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Install and configure the i3 window manager.
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed i3-wm i3lock i3status
+pacaur -y --noconfirm --needed --noedit py3status py3status-modules
