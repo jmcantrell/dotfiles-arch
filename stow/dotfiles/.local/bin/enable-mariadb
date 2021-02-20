@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure mysql database.
 
 set -e
 
-sudo pacman -Sy --noconfirm --needed mariadb
+sudo pacman -S --noconfirm --needed mariadb
 
 # disable btrfs copy-on-write for database dir
-fstype=`mount | grep " /var " | cut -d' ' -f5`
+fstype=$(mount | grep " /var " | cut -d' ' -f5)
 test "$fstype" = btrfs && sudo chattr +C /var/lib/mysql
 
 sudo mysql_install_db \

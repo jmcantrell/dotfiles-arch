@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure localhost as a virtualbox host.
 
@@ -7,8 +7,7 @@ has xinit || exit 0
 sudo pacman -S --noconfirm --needed \
     virtualbox virtualbox-host-modules-arch
 
-pacaur -y --noconfirm --needed --noedit \
-    virtualbox-ext-oracle
+aur-install virtualbox-ext-oracle
 
 sudo gpasswd -a "$USER" vboxusers
 
@@ -17,5 +16,5 @@ vmsdir="$HOME/VirtualBox VMs"
 mkdir -p "$vmsdir"
 
 # disable btrfs copy-on-write for vms folder
-fstype=`mount | grep " `dirname "$HOME"` " | cut -d' ' -f5`
+fstype=$(mount | grep " $(dirname "$HOME") " | cut -d' ' -f5)
 test "$fstype" = btrfs && chattr +C "$vmsdir"

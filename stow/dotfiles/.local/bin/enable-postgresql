@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure postgresql database.
 
@@ -15,7 +15,7 @@ data=$postgres/data
 config=$data/postgresql.conf
 
 # disable btrfs copy-on-write for database dir
-fstype=`mount | grep " /var " | cut -d' ' -f5`
+fstype=$(mount | grep " /var " | cut -d' ' -f5)
 test "$fstype" = btrfs && sudo chattr +C "$postgres"
 
 sudo -u postgres -i initdb --locale "$LANG" -E UTF8 -D "$data"

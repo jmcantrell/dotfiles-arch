@@ -1,13 +1,13 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure sound support and tools.
 
 set -e
 
-pacman="sudo pacman -S --noconfirm --needed"
-
-$pacman pulseaudio pulseaudio-{alsa,zeroconf} alsa-utils pamixer
+sudo pacman -S --noconfirm --needed \
+	pulseaudio pulseaudio-{alsa,zeroconf} alsa-utils pamixer
 
 has xinit || exit 0
 
-$pacman paprefs pavucontrol libcanberra
+sudo pacman -S --noconfirm --needed \
+	paprefs pavucontrol libcanberra

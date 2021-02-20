@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure a multimedia studio.
 
@@ -6,9 +6,10 @@ has xinit || exit 0
 
 install-krita
 
-$pacman audacity ardour
-$pacman gimp gimp-help-en darktable
-$pacman inkscape synfigstudio
-$pacman blender mypaint mtpaint
-$pacman obs-studio scribus
-$pacman gpick tiled
+sudo pacman -S --noconfirm --needed \
+	audacity ardour \
+	gimp gimp-help-en darktable \
+	inkscape synfigstudio \
+	blender mypaint mtpaint \
+	obs-studio scribus \
+	gpick tiled

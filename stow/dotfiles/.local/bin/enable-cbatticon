@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Install and configure a tray icon to control the sound mixer.
+
+set -e
+
+has xinit || exit 0
+
+# check for available batteries
+if [[ $(acpi -b | wc -l) -eq 0 ]]; then
+    # battery status notification tray icon
+    sudo pacman -S --noconfirm --needed cbatticon
+    # will start on next login, but start now
+    exec dex ~/.config/autostart/cbatticon.desktop &
+fi
+

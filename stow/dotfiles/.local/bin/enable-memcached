@@ -1,7 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -e
 
-sudo pacman -Sy --noconfirm --needed memcached
+sudo pacman -S --noconfirm --needed memcached
 sudo systemctl enable --now memcached.service
 

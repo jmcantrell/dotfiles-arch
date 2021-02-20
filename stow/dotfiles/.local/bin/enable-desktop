@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Configure an arch linux desktop environment.
 
@@ -11,38 +11,19 @@ enable-xorg
 enable-i3
 enable-pulseaudio
 
-#enable-media
-#enable-studio
-#enable-ufw && sudo pacman -S --noconfirm --needed gufw
-#enable-office && sudo pacman -S --noconfirm --needed system-config-printer
+[[ -n $MEDIA ]] && enable-media
+[[ -n $STUDIO ]] && enable-studio
+[[ -n $FIREWALL ]] && enable-ufw && sudo pacman -S --noconfirm --needed gufw
+[[ -n $OFFICE ]] && enable-office && sudo pacman -S --noconfirm --needed system-config-printer
 
-pacaur -y --noconfirm --needed --noedit rectsel xzoom
+aur-install rectsel xzoom
 
-pacaur --noconfirm --needed --noedit clipmenu
+aur-install clipmenu
 systemctl --user --now enable clipmenud.service
 
-# check for available sound devices
-if test "`pactl list short sinks | wc -l`" -eq 0; then
-    # volume status and control tray icon
-    sudo pacman -S --noconfirm --needed volumeicon
-    # will start on next login, but start now
-    dex ~/.config/autostart/volumeicon.desktop &
-fi
-
-# check for available batteries
-if has xinit && test "`acpi -b | wc -l`" -eq 0; then
-    # battery status notification tray icon
-    sudo pacman -Sy --noconfirm --needed cbatticon
-    # will start on next login, but start now
-    dex ~/.config/autostart/cbatticon.desktop &
-fi
-
-# removable disk auto mounter and tray icon
-sudo pacman -Sy --noconfirm --needed udiskie
-# access to removable disks relative to home directory
-ln -svfT "/run/media/$USER" "$HOME/.local/media"
-# will start on next login, but start now
-dex ~/.config/autostart/udiskie.desktop &
+enable-volumeicon
+enable-cbatticon
+enable-udiskie
 
 sudo pacman -S --noconfirm --needed \
     firefox feh vlc mplayer gifsicle mupdf gparted

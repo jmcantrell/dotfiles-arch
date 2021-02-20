@@ -1,16 +1,16 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure tools for typesetting, scanning, and printing.
-
-pacman="sudo pacman -S --noconfirm --needed"
 
 enable-cups
 enable-sane
 
-$pacman texlive-{bin,core,latexextra}
-$pacman ghostscript pandoc words
+sudo pacman -S --noconfirm --needed \
+	texlive-{bin,core,latexextra} \
+	ghostscript pandoc words
 
 has xinit || exit 0
 
-$pacman libreoffice-fresh gnumeric
-$pacman gummi gsfonts
+sudo pacman -S --noconfirm --needed \
+	libreoffice-fresh gnumeric \
+	gummi gsfonts

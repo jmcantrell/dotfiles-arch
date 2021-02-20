@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Simple AUR installer intended as a fallback.
 
 set -e
 
-temp=`mktemp -d -t aur-install.XXXXXXXXXX`
+temp=$(mktemp -d -t aur-install.XXXXXXXXXX)
 trap "rm -rf '$temp'" INT TERM EXIT
 
 url=https://aur.archlinux.org/cgit/aur.git/snapshot

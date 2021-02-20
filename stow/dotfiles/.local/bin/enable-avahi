@@ -1,11 +1,11 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure service discovery.
 # Enables automatic <host>.local dns lookup.
 
 set -e
 
-sudo pacman -Sy --noconfirm --needed avahi nss-mdns polkit
+sudo pacman -S --noconfirm --needed avahi nss-mdns polkit
 
 config=/etc/nsswitch.conf
 hosts="mdns_minimal [NOTFOUND=return]"

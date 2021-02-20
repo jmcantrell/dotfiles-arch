@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure a simple network firewall.
 
 set -e
 
-sudo pacman -Sy --noconfirm --needed ufw ufw-extras
+sudo pacman -S --noconfirm --needed ufw ufw-extras
 sudo systemctl --now enable ufw.service
 
 sudo ufw logging off

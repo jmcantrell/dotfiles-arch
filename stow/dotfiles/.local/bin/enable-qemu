@@ -1,6 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure virtualization support.
 
-$pacman qemu qemu-arch-extra libvirt vde2
+sudo pacman -S --noconfirm --needed \
+	qemu qemu-arch-extra libvirt vde2
+
 sudo systemctl --now enable libvirtd.service
