@@ -1,0 +1,15 @@
+alias aur=yay
+
+# search packages
+alias aurs='yay -Ss'
+
+# install packages
+alias auri='yay -S'
+
+# show package information
+alias aursh='yay -Si'
+
+# upgrade installed packages
+alias aurup='yay -Syu'
+
+# vi:ft=sh

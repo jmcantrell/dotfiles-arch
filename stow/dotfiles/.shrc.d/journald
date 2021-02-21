@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-
 alias j='journalctl -q'
 
 # show messages from boot
@@ -13,3 +11,5 @@ alias jf='journalctl -fb'
 
 # show logged boots
 alias jlb='journalctl --list-boots'
+
+# vi:ft=sh

@@ -1,16 +1,8 @@
-#!/usr/bin/env sh
-
-alias ip='ip -4 -color -human -details -brief'
+alias ip='ip -color -human -details'
 alias ipl='ip link'
 alias ipn='ip neigh'
 alias ipa='ip address'
 alias ipr='ip route'
 alias ipmon='ip -ts monitor'
 
-ipup() {
-    ip link set ${1:?missing interface} up
-}
-
-ipdown() {
-    ip link set ${1:?missing interface} down
-}
+# vi:ft=sh

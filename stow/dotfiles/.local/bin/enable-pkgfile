@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Install and configure package content indexing.
-
-set -e
-
-sudo pacman -S --noconfirm --needed pkgfile
-sudo pkgfile -u
-sudo systemctl enable pkgfile-update.timer

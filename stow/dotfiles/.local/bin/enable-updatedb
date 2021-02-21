@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Install and configure file location database.
-
-set -e
-
-sudo pacman -S --noconfirm --needed mlocate
-sudo updatedb
-
