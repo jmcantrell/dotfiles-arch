@@ -4,8 +4,7 @@
 
 set -e
 
-sudo pacman -S --noconfirm --needed \
-	virtualbox-guest-{utils,modules-arch}
+sudo pacman -S --noconfirm --needed virtualbox-guest-utils
 
 sudo systemctl --now enable vboxservice.service
 sudo modprobe -a vboxguest vboxsf vboxvideo
