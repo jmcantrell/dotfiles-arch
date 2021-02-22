@@ -23,7 +23,6 @@ curl
 darktable
 dex
 dmenu
-dnsmasq
 dos2unix
 dunst
 ebtables
@@ -49,6 +48,7 @@ gnome-icon-theme-extras
 gnome-icon-theme-symbolic
 gnome-themes-standard
 gnumeric
+go
 gparted
 gpick
 gsfonts
@@ -60,8 +60,7 @@ highlight
 i3-wm
 i3lock
 i3status
-id3
-id3lib
+id3v2
 imagemagick
 inkscape
 inotify-tools
@@ -90,7 +89,6 @@ markdown
 mediainfo
 mesa
 mkvtoolnix-cli
-mp3gain
 mpg123
 mplayer
 mtpaint
@@ -126,6 +124,7 @@ python-xdg
 ranger
 redshift
 rofi
+rust
 sane
 scribus
 simple-scan

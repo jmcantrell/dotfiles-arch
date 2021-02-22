@@ -3,7 +3,7 @@
 set -e
 
 # use fallback installer to install aur helper
-./packages/arch/.local/bin/aur-install pikaur
+which pikaur &>/dev/null || ~/.local/bin/aur-install pikaur
 
 readarray -t pacman_packages <./packages/pacman
 sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
@@ -20,7 +20,7 @@ sudo ufw enable
 sudo ln -sfv /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
 sudo ln -sfv /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 
-sudo systemctl --now enable org.cups.cupsd.service
+sudo systemctl --now enable cups.socket
 
 sudo gpasswd -a "$USER" scanner
 
