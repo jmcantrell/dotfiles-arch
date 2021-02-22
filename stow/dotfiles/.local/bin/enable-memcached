@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-sudo pacman -S --noconfirm --needed memcached
-sudo systemctl enable --now memcached.service
-
