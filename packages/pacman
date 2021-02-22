@@ -26,6 +26,7 @@ dmenu
 dos2unix
 dunst
 ebtables
+eslint
 faac
 faad2
 feh
@@ -115,6 +116,7 @@ pandoc
 paprefs
 pavucontrol
 postgresql
+prettier
 pulseaudio
 pulseaudio-alsa
 pulseaudio-zeroconf
@@ -127,6 +129,7 @@ rofi
 rust
 sane
 scribus
+shellcheck
 simple-scan
 socat
 sox
