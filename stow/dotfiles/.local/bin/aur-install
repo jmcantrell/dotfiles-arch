@@ -10,10 +10,10 @@ trap "rm -rf '$temp'" INT TERM EXIT
 url=https://aur.archlinux.org/cgit/aur.git/snapshot
 
 for name in "$@"; do
-    cd "$temp"
-    pkg=$name.tar.gz
-    cache=$temp/$pkg
-    curl -L -o "$cache" "$url/$pkg" &&
-        tar -xvf "$cache" && cd "$temp/$name" &&
-        makepkg -sri --noconfirm --needed
+	cd "$temp"
+	pkg=$name.tar.gz
+	cache=$temp/$pkg
+	curl -L -o "$cache" "$url/$pkg" &&
+		tar -xvf "$cache" && cd "$temp/$name" &&
+		makepkg -sri --noconfirm --needed
 done

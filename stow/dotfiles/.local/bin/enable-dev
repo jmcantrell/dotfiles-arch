@@ -5,9 +5,9 @@
 set -e
 
 sudo pacman -S --noconfirm --needed \
-    neovim ctags git words aspell-en \
-    highlight tidy dos2unix jq markdown xmlstarlet \
-    nodejs python
+	neovim ctags git words aspell-en \
+	highlight tidy dos2unix jq markdown xmlstarlet \
+	nodejs python
 
 enable-pyenv && $SHELL -c enable-python
 enable-nvm && $SHELL -c enable-node

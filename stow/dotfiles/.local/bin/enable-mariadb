@@ -11,7 +11,7 @@ fstype=$(mount | grep " /var " | cut -d' ' -f5)
 test "$fstype" = btrfs && sudo chattr +C /var/lib/mysql
 
 sudo mysql_install_db \
-    --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+	--user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 sudo systemctl enable --now mariadb.service
 sudo mysql_secure_installation

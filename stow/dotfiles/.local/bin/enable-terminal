@@ -5,13 +5,13 @@
 set -e
 
 sudo pacman -S --noconfirm --needed \
-    bash bash-completion \
-    zsh zsh-completions \
-    openssh tmux ranger
+	bash bash-completion \
+	zsh zsh-completions \
+	openssh tmux ranger
 
 sudo pacman -S --noconfirm --needed \
-    atool bzip2 gzip zip unzip p7zip tar \
-    cpio lha xz lzop unace unrar
+	atool bzip2 gzip zip unzip p7zip tar \
+	cpio lha xz lzop unace unrar
 
 sudo pacman -S --noconfirm --needed \
 	vim words aspell-en
@@ -23,9 +23,9 @@ sudo pacman -S --noconfirm --needed \
 	iptables ebtables openvpn
 
 sudo pacman -S --noconfirm --needed \
-    acpi lshw lsof socat \
-    bridge-utils dnsmasq \
-    inotify-tools glances ncdu
+	acpi lshw lsof socat \
+	bridge-utils dnsmasq \
+	inotify-tools glances ncdu
 
 sudo pacman -S --noconfirm --needed \
 	aria2 stow

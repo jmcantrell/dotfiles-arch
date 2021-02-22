@@ -33,7 +33,7 @@ alias pacf='pkgfile -sir'  # <pattern>
 
 # show package contents
 pacls() {
-    pkgfile -l "$@" | cut -f2 | grep -v '/$'
+	pkgfile -l "$@" | cut -f2 | grep -v '/$'
 }
 
 # vi:ft=sh
