@@ -1,15 +1,15 @@
-alias aur=yay
+alias aur=pikaur
 
 # search packages
-alias aurs='yay -Ss'
+alias aurs='pikaur -Ss'
 
 # install packages
-alias auri='yay -S'
+alias auri='pikaur -S'
 
 # show package information
-alias aursh='yay -Si'
+alias aursh='pikaur -Si'
 
 # upgrade installed packages
-alias aurup='yay -Syu'
+alias aurup='pikaur -Syu'
 
 # vi:ft=sh

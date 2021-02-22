@@ -15,5 +15,5 @@ for name in "$@"; do
     cache=$temp/$pkg
     curl -L -o "$cache" "$url/$pkg" &&
         tar -xvf "$cache" && cd "$temp/$name" &&
-        makepkg -sri --noconfirm --needed
+        makepkg -fsri --noconfirm --needed
 done
