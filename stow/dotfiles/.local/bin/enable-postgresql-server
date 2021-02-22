@@ -4,8 +4,6 @@
 
 set -e
 
-sudo pacman -S --noconfirm --needed postgresql
-
 user=postgres
 echo -e "$user\n$user" | sudo passwd "$user" &>/dev/null
 echo "Database password for user '$user' set to '$user'" >&2

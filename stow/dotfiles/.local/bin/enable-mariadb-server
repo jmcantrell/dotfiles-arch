@@ -4,8 +4,6 @@
 
 set -e
 
-sudo pacman -S --noconfirm --needed mariadb
-
 # disable btrfs copy-on-write for database dir
 fstype=$(mount | grep " /var " | cut -d' ' -f5)
 test "$fstype" = btrfs && sudo chattr +C /var/lib/mysql
