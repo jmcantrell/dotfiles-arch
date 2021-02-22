@@ -3,7 +3,7 @@
 set -e
 
 # use fallback installer to install aur helper
-./packages/arch/.local/bin/aur-install yay
+./packages/arch/.local/bin/aur-install pikaur
 
 readarray -t pacman_packages <./packages/pacman
 sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
