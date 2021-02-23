@@ -17,6 +17,7 @@ sudo ufw default deny
 sudo ufw enable
 
 sudo systemctl --now enable docker.service
+sudo gpasswd -a "$USER" docker
 
 # font display tweaks
 sudo ln -sfv /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
