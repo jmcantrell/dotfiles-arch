@@ -22,6 +22,8 @@ cups-pdf
 curl
 darktable
 dmenu
+docker
+docker-compose
 dos2unix
 dunst
 ebtables

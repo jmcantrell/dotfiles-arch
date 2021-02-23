@@ -16,8 +16,7 @@ sudo ufw logging off
 sudo ufw default deny
 sudo ufw enable
 
-sudo systemctl enable --now snapd.socket
-sudo ln -sfvT /var/lib/snapd/snap /snap
+sudo systemctl --now enable docker.service
 
 # font display tweaks
 sudo ln -sfv /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
