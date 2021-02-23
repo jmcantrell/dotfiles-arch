@@ -69,6 +69,7 @@ imagemagick
 inkscape
 inotify-tools
 iptables
+jdk-openjdk
 jq
 krita
 lame
@@ -92,6 +93,7 @@ mariadb
 markdown
 mediainfo
 mesa
+mkcert
 mkvtoolnix-cli
 mpg123
 mplayer
@@ -128,6 +130,7 @@ py3status
 python
 python-xdg
 ranger
+redis
 redshift
 ripgrep
 rofi
