@@ -50,6 +50,7 @@ gnome-icon-theme-symbolic
 gnome-themes-standard
 gnumeric
 go
+go-ipfs
 gparted
 gpick
 gsfonts
@@ -187,6 +188,7 @@ xsel
 xterm
 xvidcore
 xz
+zenity
 zip
 zsh
 zsh-completions

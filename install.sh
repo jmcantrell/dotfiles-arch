@@ -16,6 +16,9 @@ sudo ufw logging off
 sudo ufw default deny
 sudo ufw enable
 
+sudo systemctl enable --now snapd.socket
+sudo ln -sfvT /var/lib/snapd/snap /snap
+
 # font display tweaks
 sudo ln -sfv /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
 sudo ln -sfv /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
@@ -26,13 +29,7 @@ sudo gpasswd -a "$USER" scanner
 
 sudo gpasswd -a "$USER" vboxusers
 
-vmsdir="$HOME/VirtualBox VMs"
-mkdir -p "$vmsdir"
-# disable btrfs copy-on-write for vms folder
-fstype=$(mount | grep " $(dirname "$HOME") " | cut -d' ' -f5)
-[[ "$fstype" = btrfs ]] && chattr +C "$vmsdir"
+ipfs init
+systemctl --user --now enable ipfs.service
 
 systemctl --user --now enable clipmenud.service
-
-# friendlier access to udiskie removable disks
-ln -svfT "/run/media/$USER" "$HOME/.local/media"
