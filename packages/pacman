@@ -114,6 +114,7 @@ p7zip
 pamixer
 pandoc
 paprefs
+pass
 pavucontrol
 postgresql
 prettier
@@ -125,6 +126,7 @@ python
 python-xdg
 ranger
 redshift
+ripgrep
 rofi
 rust
 sane
@@ -147,6 +149,7 @@ tidy
 tiled
 tmux
 trash-cli
+tree
 ttf-croscore
 ttf-dejavu
 ttf-droid
