@@ -116,8 +116,10 @@ optipng
 opus-tools
 opusfile
 p7zip
+pacman-contrib
 pamixer
 pandoc
+papirus-icon-theme
 paprefs
 pass
 pavucontrol
@@ -131,9 +133,7 @@ python
 python-xdg
 ranger
 redis
-redshift
 ripgrep
-rofi
 rust
 sane
 scribus
@@ -169,6 +169,7 @@ unace
 unclutter
 unrar
 unzip
+vim
 vimb
 virtualbox
 virtualbox-host-modules-arch
@@ -178,6 +179,7 @@ vorbisgain
 wavpack
 wget
 whois
+wmctrl
 words
 xdotool
 xf86-video-intel
