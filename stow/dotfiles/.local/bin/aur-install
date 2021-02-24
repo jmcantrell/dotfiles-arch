@@ -5,7 +5,7 @@
 set -e
 
 temp=$(mktemp -d -t aur-install.XXXXXXXXXX)
-trap "rm -rf '$temp'" INT TERM EXIT
+trap "rm -rf $(printf "%q" "$temp")" INT TERM EXIT
 
 url=https://aur.archlinux.org/cgit/aur.git/snapshot
 
