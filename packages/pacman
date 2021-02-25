@@ -11,6 +11,9 @@ audacity
 bash
 bash-completion
 blender
+blueman
+bluez
+bluez-utils
 bridge-utils
 bzip2
 cbatticon
@@ -77,6 +80,7 @@ lha
 libcanberra
 libdca
 libdv
+libimobiledevice
 libmad
 libmpeg2
 libnotify
@@ -122,6 +126,7 @@ pandoc
 paprefs
 pass
 pavucontrol
+polkit
 postgresql
 prettier
 pulseaudio

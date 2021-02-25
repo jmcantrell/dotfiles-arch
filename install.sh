@@ -23,10 +23,12 @@ sudo gpasswd -a "$USER" docker
 sudo ln -sfv /etc/fonts/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
 sudo ln -sfv /etc/fonts/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 
+sudo systemctl --now enable bluetooth.service
+sudo gpasswd -a "$USER" lp
+
 sudo systemctl --now enable cups.socket
 
 sudo gpasswd -a "$USER" scanner
-
 sudo gpasswd -a "$USER" vboxusers
 
 ipfs init
