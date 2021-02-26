@@ -138,6 +138,7 @@ python-xdg
 ranger
 redis
 ripgrep
+ruby
 rust
 sane
 scribus
@@ -152,11 +153,13 @@ synfigstudio
 system-config-printer
 taglib
 tar
+tcl
 texlive-bin
 texlive-core
 texlive-latexextra
 tidy
 tiled
+tk
 tmux
 trash-cli
 tree
@@ -182,6 +185,7 @@ vlc
 volumeicon
 vorbisgain
 wavpack
+weechat
 wget
 whois
 wmctrl
