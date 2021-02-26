@@ -35,3 +35,5 @@ ipfs init
 systemctl --user --now enable ipfs.service
 
 systemctl --user --now enable clipmenud.service
+
+systemctl --user --now enable mpd.service

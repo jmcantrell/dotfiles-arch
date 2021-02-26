@@ -68,10 +68,13 @@ i3-wm
 i3lock
 i3status
 id3v2
+iftop
 imagemagick
 inkscape
 inotify-tools
+iotop
 iptables
+iptraf-ng
 jdk-openjdk
 jq
 krita
@@ -99,6 +102,8 @@ mediainfo
 mesa
 mkcert
 mkvtoolnix-cli
+mpc
+mpd
 mpg123
 mplayer
 mtpaint
@@ -107,6 +112,7 @@ musepack-tools
 mypaint
 ncdu
 neovim
+net-tools
 newsboat
 nodejs
 notification-daemon
@@ -150,10 +156,12 @@ speex
 stow
 sxhkd
 synfigstudio
+sysstat
 system-config-printer
 taglib
 tar
 tcl
+tcpdump
 texlive-bin
 texlive-core
 texlive-latexextra
@@ -188,6 +196,7 @@ wavpack
 weechat
 wget
 whois
+wireshark-qt
 wmctrl
 words
 xdotool
