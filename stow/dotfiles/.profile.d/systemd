@@ -1,0 +1,4 @@
+# inform systemctl of my path variable
+systemctl --user import-environment PATH
+
+# vi:ft=sh
