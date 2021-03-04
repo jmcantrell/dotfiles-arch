@@ -44,6 +44,7 @@ foomatic-db-engine
 foomatic-db-gutenprint-ppds
 foomatic-db-nonfree-ppds
 foomatic-db-ppds
+gdb
 ghostscript
 gifsicle
 gimp
@@ -94,6 +95,7 @@ libtheora
 libvorbis
 libx264
 libxv
+lldb
 lshw
 lsof
 lynx
