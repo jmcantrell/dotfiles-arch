@@ -143,6 +143,7 @@ prettier
 pulseaudio
 pulseaudio-alsa
 pulseaudio-zeroconf
+pwgen
 py3status
 python
 python-xdg
@@ -199,6 +200,7 @@ virtualbox-host-modules-arch
 vlc
 volumeicon
 vorbisgain
+w3m
 wavpack
 weechat
 wget

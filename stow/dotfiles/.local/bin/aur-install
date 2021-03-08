@@ -7,7 +7,7 @@ set -e
 temp=$(mktemp -d -t aur-install.XXXXXXXXXX)
 trap "rm -rf $(printf "%q" "$temp")" INT TERM EXIT
 
-url=https://aur.archlinux.org/cgit/aur.git/snapshot
+url="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 for name in "$@"; do
     cd "$temp"
