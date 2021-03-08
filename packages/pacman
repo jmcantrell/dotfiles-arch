@@ -95,6 +95,7 @@ libtheora
 libvorbis
 libx264
 libxv
+linux-tools
 lldb
 lshw
 lsof
@@ -173,6 +174,7 @@ tidy
 tiled
 tk
 tmux
+transmission-gtk
 trash-cli
 tree
 ttf-croscore
@@ -189,6 +191,7 @@ unclutter
 unrar
 unzip
 usbutils
+valgrind
 vim
 vimb
 virtualbox
