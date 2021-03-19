@@ -173,6 +173,7 @@ texlive-bin
 texlive-core
 texlive-latexextra
 tidy
+tig
 tiled
 tk
 tmux
