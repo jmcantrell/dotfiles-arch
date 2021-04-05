@@ -19,7 +19,6 @@ sudo ufw enable
 sudo systemctl --now enable docker.service
 sudo gpasswd -a "$USER" docker
 
-# font display tweaks
 sudo ln -sfv /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf /etc/fonts/conf.d
 sudo ln -sfv /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf.d
 
@@ -35,5 +34,3 @@ ipfs init
 systemctl --user --now enable ipfs.service
 
 systemctl --user --now enable clipmenud.service
-
-systemctl --user --now enable mpd.service

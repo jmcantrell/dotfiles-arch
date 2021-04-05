@@ -140,6 +140,7 @@ pandoc
 paprefs
 pass
 pavucontrol
+playerctl
 polkit
 postgresql
 prettier
