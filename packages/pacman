@@ -1,5 +1,6 @@
 a52dec
 acpi
+alacritty
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -33,6 +34,7 @@ dos2unix
 dunst
 ebtables
 eslint
+exa
 faac
 faad2
 feh
