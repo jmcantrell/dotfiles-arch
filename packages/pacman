@@ -8,6 +8,7 @@ ardour
 aria2
 aspell-en
 astyle
+at
 atool
 audacity
 autopep8
@@ -27,6 +28,7 @@ cups
 cups-pdf
 curl
 darktable
+dia
 dmenu
 docker
 docker-compose
@@ -141,6 +143,7 @@ pandoc
 paprefs
 pass
 pavucontrol
+pencil2d
 playerctl
 polkit
 postgresql
