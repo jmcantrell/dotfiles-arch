@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-unset PATH
+unset PATH EDITOR VISUAL
 . /etc/profile
 exec /usr/bin/pikaur "$@"

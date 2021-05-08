@@ -11,7 +11,6 @@ astyle
 at
 atool
 audacity
-autopep8
 bash
 bash-completion
 blender
@@ -28,10 +27,9 @@ cups
 cups-pdf
 curl
 darktable
+dhcping
 dia
 dmenu
-docker
-docker-compose
 dos2unix
 dunst
 ebtables
@@ -81,8 +79,9 @@ imagemagick
 inkscape
 inotify-tools
 iotop
-iptables
+ipcalc
 iptraf-ng
+iw
 jdk-openjdk
 jq
 krita
@@ -109,6 +108,7 @@ lynx
 lzop
 mariadb
 markdown
+mdcat
 mediainfo
 mesa
 mkcert
@@ -125,6 +125,7 @@ ncdu
 neovim
 net-tools
 newsboat
+nftables
 nodejs
 notification-daemon
 noto-fonts

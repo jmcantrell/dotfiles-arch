@@ -11,10 +11,7 @@ sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
 readarray -t aur_packages <./packages/aur
 pikaur -Sy --noconfirm --needed "${aur_packages[@]}"
 
-sudo systemctl --now enable ufw.service
-sudo ufw logging off
-sudo ufw default deny
-sudo ufw enable
+sudo systemctl enable --now nftables.service
 
 sudo systemctl --now enable docker.service
 sudo gpasswd -a "$USER" docker
