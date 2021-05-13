@@ -184,6 +184,7 @@ tidy
 tig
 tiled
 tk
+tldr
 tmux
 transmission-gtk
 trash-cli
@@ -216,6 +217,7 @@ websocat
 weechat
 wget
 whois
+wireguard-tools
 wireshark-qt
 wmctrl
 words
