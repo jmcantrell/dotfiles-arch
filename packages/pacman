@@ -30,6 +30,8 @@ darktable
 dhcping
 dia
 dmenu
+docker
+docker-compose
 dos2unix
 dunst
 ebtables
