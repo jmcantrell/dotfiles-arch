@@ -13,8 +13,6 @@ pikaur -Sy --noconfirm --needed "${aur_packages[@]}"
 
 sudo rsync -a ./rootfs/ /
 
-sudo systemctl enable --now nftables.service
-
 sudo systemctl --now enable docker.service
 sudo gpasswd -a "$USER" docker
 
@@ -31,11 +29,3 @@ sudo gpasswd -a "$USER" vboxusers
 
 ipfs init
 systemctl --user --now enable ipfs.service
-
-sudo systemctl enable mullvad-daemon.service
-sudo systemctl enable mullvad-suspend.service
-sudo systemctl enable mullvad-resume.service
-
-mullvad auto-connect set on
-mullvad relay set location us nyc
-mullvad lan set allow
