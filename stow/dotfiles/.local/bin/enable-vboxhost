@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed  virtualbox virtualbox-host-modules-arch
+
+pikaur -Sy --noconfirm --needed virtualbox-ext-oracle
+
+sudo gpasswd -a "$USER" vboxusers

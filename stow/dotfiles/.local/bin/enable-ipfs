@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+sudo pacman -Sy --noconfirm --needed go-ipfs
+
+ipfs init
+
+systemctl --user enable --now ipfs.service

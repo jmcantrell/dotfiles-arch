@@ -1,6 +1,5 @@
 a52dec
 acpi
-alacritty
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -34,8 +33,6 @@ dhcping
 dia
 djvulibre
 dmenu
-docker
-docker-compose
 dos2unix
 dunst
 ebtables
@@ -70,7 +67,6 @@ gnome-themes-standard
 gnu-netcat
 gnumeric
 go
-go-ipfs
 gparted
 gpick
 gsfonts
@@ -220,8 +216,6 @@ usbutils
 valgrind
 vim
 vimb
-virtualbox
-virtualbox-host-modules-arch
 vlc
 volumeicon
 vorbisgain
