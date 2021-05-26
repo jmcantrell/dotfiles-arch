@@ -21,6 +21,7 @@ bluez-utils
 bridge-utils
 bzip2
 calibre
+catdoc
 cbatticon
 compton
 cpio
@@ -248,6 +249,10 @@ xsel
 xterm
 xvidcore
 xz
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-mupdf
 zenity
 zip
 zsh
