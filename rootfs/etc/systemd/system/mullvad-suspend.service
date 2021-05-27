@@ -1,0 +1,10 @@
+[Unit]
+Description=Stop mullvad daemon before suspend
+Before=sleep.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemctl stop mullvad-daemon.service
+
+[Install]
+WantedBy=sleep.target

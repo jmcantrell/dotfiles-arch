@@ -1,0 +1,18 @@
+[Unit]
+Description=Start mullvad daemon after resume
+Requires=network-online.target
+After=network-online.target
+Wants=network-online.target
+StartLimitInterval=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/systemctl restart mullvad-daemon.service
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=suspend.target
+WantedBy=hibernate.target
+WantedBy=hybrid-sleep.target
