@@ -1,9 +1,0 @@
-[Unit]
-Before=suspend.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/systemctl stop mullvad-daemon.service
-
-[Install]
-WantedBy=suspend.target
