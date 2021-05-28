@@ -26,7 +26,7 @@ After=suspend.target
 
 [Service]
 Type=simple
-ExecStartPre=/bin/sleep 10
+ExecStartPre=/bin/sleep 15
 ExecStart=/usr/bin/systemctl restart mullvad-daemon.service
 
 [Install]
