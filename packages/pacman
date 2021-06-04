@@ -29,6 +29,7 @@ cups
 cups-pdf
 curl
 darktable
+deno
 dhcping
 dia
 djvulibre
@@ -174,6 +175,7 @@ rust
 sane
 scribus
 shellcheck
+shfmt
 simple-scan
 socat
 sox
