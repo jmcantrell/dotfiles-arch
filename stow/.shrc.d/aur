@@ -1,4 +1,4 @@
-alias aur='pikaur --noedit --nodiff'
+alias pikaur='pikaur --noedit --nodiff'
 
 # search packages
 alias aurs='pikaur -Ss'
