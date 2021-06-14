@@ -1,5 +1,6 @@
 a52dec
 acpi
+alacritty
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -243,7 +244,6 @@ xorg-xlsfonts
 xsane
 xsane-gimp
 xsel
-xterm
 xvidcore
 xz
 zathura
