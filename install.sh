@@ -2,14 +2,11 @@
 
 set -e
 
-# use fallback installer to install aur helper
-which pikaur &>/dev/null || ~/.local/bin/aur-install pikaur
-
 readarray -t pacman_packages <./packages/pacman
 sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
 
 readarray -t aur_packages <./packages/aur
-pikaur -Sy --noconfirm --needed "${aur_packages[@]}"
+./stow/.local/bin/aur-install "${aur_packages[@]}"
 
 sudo rsync -a ./rootfs/ /
 
