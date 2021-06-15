@@ -6,43 +6,14 @@ pikaur -Sy --noconfirm --needed mullvad-vpn
 
 sudo systemctl enable --now mullvad-daemon.service
 
-echo "
-[Unit]
-Before=suspend.target
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/systemctl stop mullvad-daemon.service
-
-[Install]
-WantedBy=suspend.target
-" | sudo tee /etc/systemd/system/mullvad-suspend.service &>/dev/null
-
-sudo systemctl enable mullvad-suspend.service
-
-echo "
-[Unit]
-After=suspend.target
-
-[Service]
-Type=simple
-ExecStartPre=/bin/sleep 15
-ExecStart=/usr/bin/systemctl restart mullvad-daemon.service
-
-[Install]
-WantedBy=suspend.target
-" | sudo tee /etc/systemd/system/mullvad-resume.service &>/dev/null
-
-sudo systemctl enable mullvad-resume.service
-
 account=$(pass show mullvad-account)
 
 if test -z "$account"; then
-    echo "Unable to get 'mullvad-account' number from pass!" >&2
+    echo "Unable to get 'mullvad-account' from pass!" >&2
     exit 1
 fi
 
-mullvad account set "$(pass show mullvad-account)"
+mullvad account set "$account"
 mullvad auto-connect set on
 mullvad lan set allow
 mullvad relay set tunnel-protocol wireguard
