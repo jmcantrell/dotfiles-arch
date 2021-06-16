@@ -2,8 +2,16 @@
 
 set -e
 
-sudo pacman -Sy --noconfirm --needed  virtualbox virtualbox-host-modules-arch
+sudo pacman -Sy --noconfirm --needed virtualbox virtualbox-host-modules-arch
 
 pikaur -Sy --noconfirm --needed virtualbox-ext-oracle
 
 sudo gpasswd -a "$USER" vboxusers
+
+vmsdir=$HOME/.virtualbox
+mkdir -p "$vmsdir"
+vboxmanage setproperty machinefolder "$vmsdir"
+
+# disable btrfs copy-on-write for vms folder
+fstype=$(mount | grep " $(dirname "$HOME") " | cut -d' ' -f5)
+[[ "$fstype" = btrfs ]] && chattr +C "$vmsdir"
