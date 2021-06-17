@@ -2,6 +2,7 @@ a52dec
 acpi
 alacritty
 alsa-utils
+amfora
 arc-gtk-theme
 arc-icon-theme
 ardour
@@ -178,6 +179,7 @@ scribus
 shellcheck
 shfmt
 simple-scan
+snarf
 socat
 sox
 speex
