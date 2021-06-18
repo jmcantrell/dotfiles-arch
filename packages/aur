@@ -1,5 +1,5 @@
-direnv
-gron
+direnv-bin
+gron-bin
 pikaur
 py3status-modules
 xrectsel
