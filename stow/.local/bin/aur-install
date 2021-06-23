@@ -13,7 +13,8 @@ for name in "$@"; do
     cd "$temp"
     pkg=$name.tar.gz
     cache=$temp/$pkg
-    curl -L -o "$cache" "$url/$pkg" &&
-        tar -xvf "$cache" && cd "$temp/$name" &&
-        makepkg -fsri --noconfirm --needed
+    curl -L -o "$cache" "$url/$pkg"
+    tar -xvf "$cache"
+    cd "$temp/$name"
+    makepkg -fsri --noconfirm --needed
 done
