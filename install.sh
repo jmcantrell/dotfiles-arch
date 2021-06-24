@@ -5,5 +5,6 @@ set -e
 readarray -t pacman_packages <./packages/pacman
 sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
 
+./stow/.local/bin/aur-install pikaur
 readarray -t aur_packages <./packages/aur
-./stow/.local/bin/aur-install "${aur_packages[@]}"
+pikaur -Sy --noconfirm --needed "${aur_packages[@]}"
