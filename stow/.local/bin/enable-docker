@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Install and configure Docker.
+
+set -e
+
 sudo pacman -Sy --noconfirm --needed docker docker-compose
 sudo systemctl enable --now docker.service
 sudo gpasswd -a "$USER" docker

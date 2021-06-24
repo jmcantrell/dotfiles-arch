@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
+# Install and configure an IPFS daemon.
+
 set -e
 
 sudo pacman -Sy --noconfirm --needed go-ipfs
-
 ipfs init
-
 systemctl --user enable --now ipfs.service
