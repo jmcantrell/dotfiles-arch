@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+pikaur -Sy --noconfirm --needed system76-driver
+
+sudo systemctl enable --now system76-firmware-daemon.service
+sudo systemctl enable --now system76.service

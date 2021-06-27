@@ -25,15 +25,15 @@ alias pacx='sudo pacman -Sc'
 alias paco='pacman -Qdt'
 
 # search installed packages
-alias pacq='pacman -Qs'  # detailed list
-alias pacqq='pacman -Qqs'  # short list
+alias pacq='pacman -Qs'   # detailed list
+alias pacqq='pacman -Qqs' # short list
 
 # show packages containing filename
-alias pacf='pkgfile -sir'  # <pattern>
+alias pacf='pkgfile -sir' # <pattern>
 
 # show package contents
 pacls() {
-	pkgfile -l "$@" | cut -f2 | grep -v '/$'
+    pkgfile -l "$@" | cut -f2 | grep -v '/$'
 }
 
 # vi:ft=sh

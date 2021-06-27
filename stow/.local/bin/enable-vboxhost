@@ -3,9 +3,7 @@
 set -e
 
 sudo pacman -Sy --noconfirm --needed virtualbox virtualbox-host-modules-arch
-
 pikaur -Sy --noconfirm --needed virtualbox-ext-oracle
-
 sudo gpasswd -a "$USER" vboxusers
 
 # disable btrfs copy-on-write for vms folder
