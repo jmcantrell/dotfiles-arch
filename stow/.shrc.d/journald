@@ -1,15 +1,15 @@
 alias j='journalctl -q'
 
-# show messages from boot
+# Show messages from boot.
 alias jb='journalctl -b'
 
-# show messages for unit
+# Show messages for unit.
 alias ju='journalctl -u'
 
-# follow recent messages
+# Follow recent messages.
 alias jf='journalctl -fb'
 
-# show logged boots
+# Show logged boots.
 alias jlb='journalctl --list-boots'
 
 # vi:ft=sh

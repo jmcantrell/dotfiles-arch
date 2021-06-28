@@ -1,15 +1,8 @@
 alias pikaur='pikaur --noedit --nodiff'
 
-# search packages
 alias aurs='pikaur -Ss'
-
-# install packages
 alias auri='pikaur -S'
-
-# show package information
 alias aursh='pikaur -Si'
-
-# upgrade installed packages
 alias aurup='pikaur -Syu'
 
 # vi:ft=sh

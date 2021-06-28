@@ -10,8 +10,6 @@ aspell-en
 astyle
 atool
 audacity
-bash
-bash-completion
 bat
 blender
 bridge-utils
@@ -19,7 +17,6 @@ calibre
 catdoc
 cbatticon
 ctags
-curl
 darktable
 dgen-sdl
 dhcping
@@ -40,7 +37,6 @@ gdb
 gifsicle
 gimp
 gimp-help-en
-git
 glances
 gnome-icon-theme
 gnome-icon-theme-extras
@@ -74,7 +70,6 @@ linux-tools
 lldb
 lshw
 lsof
-lynx
 mariadb
 markdown
 mdcat
@@ -99,8 +94,6 @@ noto-fonts-cjk
 noto-fonts-emoji
 obs-studio
 odt2txt
-openssh
-openvpn
 optipng
 p7zip
 pacman-contrib
@@ -112,7 +105,6 @@ pass
 pavucontrol
 pencil2d
 perl-image-exiftool
-picom
 playerctl
 polkit
 postgresql
@@ -132,7 +124,6 @@ snarf
 snes9x
 socat
 sox
-stow
 sxhkd
 sxiv
 synfigstudio
@@ -142,11 +133,9 @@ termshark
 texlive-bin
 texlive-core
 texlive-latexextra
-tidy
 tig
 tiled
 tldr
-tmux
 transmission-cli
 transmission-gtk
 trash-cli
@@ -166,10 +155,8 @@ valgrind
 vim
 vimb
 volumeicon
-w3m
 websocat
 weechat
-wget
 whois
 wireguard-tools
 wireshark-qt
@@ -189,5 +176,3 @@ zathura-djvu
 zathura-pdf-mupdf
 zenity
 zip
-zsh
-zsh-completions

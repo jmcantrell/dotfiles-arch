@@ -7,7 +7,7 @@ set -e
 pikaur -Sy --noconfirm --needed mullvad-vpn
 sudo systemctl enable --now mullvad-daemon.service
 
-mullvad account set "$MULLVAD_ACCOUNT"
+mullvad account set "${MULLVAD_ACCOUNT:?MULLVAD_ACCOUNT not set}"
 mullvad auto-connect set on
 mullvad lan set allow
 mullvad relay set tunnel-protocol wireguard
