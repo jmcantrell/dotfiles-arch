@@ -4,7 +4,7 @@
 # assumed to be the system version. I usually have different versions
 # of those tools in my PATH (using pyenv, rustup, etc.), which causes the
 # package build to fail. This tries to decontaminate the build environment by
-# restoring some variables to their default system state.
+# restoring PATH to the default system state.
 
 unset PATH
 . /etc/profile
