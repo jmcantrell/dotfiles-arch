@@ -2,9 +2,11 @@
 
 set -e
 
+export PATH=$PWD/stow/.local/bin:$PATH
+
 readarray -t pacman_packages <./packages/pacman
 sudo pacman -Sy --noconfirm --needed "${pacman_packages[@]}"
 
-./stow/.local/bin/aur-install pikaur
+aur-install pikaur
 readarray -t aur_packages <./packages/aur
 pikaur -Sy --noconfirm --needed "${aur_packages[@]}"

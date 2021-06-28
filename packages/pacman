@@ -10,8 +10,10 @@ aspell-en
 astyle
 atool
 audacity
+bandit
 bat
 blender
+bpython
 bridge-utils
 calibre
 catdoc
@@ -32,6 +34,7 @@ fceux
 ffmpeg
 ffmpegthumbnailer
 firefox
+flake8
 fontforge
 gdb
 gifsicle
@@ -60,6 +63,7 @@ ipcalc
 iptraf-ng
 iw
 jdk-openjdk
+jedi-language-server
 jq
 krita
 libcaca
@@ -114,9 +118,14 @@ pulseaudio-alsa
 pulseaudio-zeroconf
 pwgen
 py3status
+python-black
+python-pillow
+python-poetry
+python-pynvim
 ranger
 redis
 ripgrep
+rust-analyzer
 scribus
 shellcheck
 shfmt
