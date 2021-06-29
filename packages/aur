@@ -1,5 +1,6 @@
 as-tree-bin
 direnv-bin
+git-archive-all
 gron-bin
 py3status-modules
 xrectsel
