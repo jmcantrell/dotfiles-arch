@@ -13,6 +13,5 @@ mkdir -p "$vms_dir"
 
 vboxmanage setproperty machinefolder "$vms_dir"
 
-# Disable btrfs copy-on-write for vms directory.
-fstype=$(mount | grep " $(dirname "$HOME") " | cut -d' ' -f5)
-[[ "$fstype" = btrfs ]] && chattr +C "$vms_dir"
+# Disable copy-on-write if on a btrfs file system.
+[[ $(stat -f -c %T "$vms_dir") == btrfs ]] && chattr +C "$vms_dir"

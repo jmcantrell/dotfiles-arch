@@ -6,11 +6,12 @@ set -e
 
 sudo pacman -Sy --noconfirm --needed mariadb
 
-# Disable btrfs copy-on-write for database directory.
-fstype=$(mount | grep " /var " | cut -d' ' -f5)
-test "$fstype" = btrfs && sudo chattr +C /var/lib/mysql
+mysql=/var/lib/mysql
 
-sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+# Disable copy-on-write if on a btrfs file system.
+[[ $(stat -f -c %T "$mysql") == btrfs ]] && sudo chattr +C "$mysql"
+
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir="$mysql"
 
 sudo systemctl enable --now mariadb.service
 
