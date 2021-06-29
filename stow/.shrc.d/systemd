@@ -1,5 +1,4 @@
 alias sys='systemctl'
-alias sys!='sudo systemctl'
 alias syss='systemctl status --all'
 alias sysu='systemctl --user status --all'
 alias sysls='systemctl list-unit-files'

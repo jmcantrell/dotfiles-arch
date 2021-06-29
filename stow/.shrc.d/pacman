@@ -1,13 +1,13 @@
 alias pacman='pacman --color=auto'
 
 alias pac='pacman'
-alias pac!='sudo pacman'
-
 alias pacs='pacman -Ss'
 alias paci='sudo pacman -Sy'
-alias pacsh='pacman -Si'
 alias pacup='sudo pacman -Syu'
 alias pacrm='sudo pacman -Rs'
+
+# Show package information.
+alias pacsh='pacman -Si'
 
 # Remove unused packages.
 alias pacx='sudo pacman -Sc'

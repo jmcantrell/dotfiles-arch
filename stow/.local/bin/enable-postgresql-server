@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# Install and configure postgresql database.
+# Install and configure the PostgreSQL database.
 
 set -e
 
 sudo pacman -Sy --noconfirm --needed postgresql
 
 user=postgres
-echo -e "$user\n$user" | sudo passwd "$user" &>/dev/null
+sudo chpasswd <<<"$user:$user"
 echo "Database password for user '$user' set to '$user'" >&2
 
 postgres=/var/lib/postgres
@@ -18,18 +18,18 @@ config=$data/postgresql.conf
 fstype=$(mount | grep " /var " | cut -d' ' -f5)
 test "$fstype" = btrfs && sudo chattr +C "$postgres"
 
-sudo -u postgres -i initdb --locale "$LANG" -E UTF8 -D "$data"
+sudo -u postgres -i initdb --no-locale --encoding=utf-8 --pgdata="$data"
 
 enable_line() {
     sudo sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$config"
 }
 
-# Store stats in memory instead of disk.
-enable_line stats_temp_directory "'/run/postgresql'"
-
-# Speed up commits.
+enable_line timezone utc
+enable_line log_statement all
 enable_line synchronous_commit off
+enable_line stats_temp_directory "'/run/postgresql'"
 
 sudo systemctl enable --now postgresql.service
 
+# Create a superuser account for myself.
 sudo -u postgres -i createuser -drs "$USER"

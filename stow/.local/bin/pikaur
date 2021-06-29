@@ -2,7 +2,7 @@
 
 # Most packages in the AUR need to be built, which requires tooling that is
 # assumed to be the system version. I usually have different versions
-# of those tools in my PATH (using pyenv, rustup, etc.), which causes the
+# of those tools in my PATH (using pyenv, rustup, etc.), which can cause the
 # package build to fail. This tries to decontaminate the build environment by
 # restoring PATH to the default system state.
 
