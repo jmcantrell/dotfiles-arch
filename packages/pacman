@@ -122,6 +122,7 @@ python-black
 python-pillow
 python-poetry
 python-pynvim
+qemu
 ranger
 redis
 ripgrep
