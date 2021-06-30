@@ -6,10 +6,6 @@ set -e
 
 sudo pacman -Sy --noconfirm --needed postgresql
 
-user=postgres
-sudo chpasswd <<<"$user:$user"
-echo "Database password for user '$user' set to '$user'" >&2
-
 postgres=/var/lib/postgres
 data=$postgres/data
 config=$data/postgresql.conf
