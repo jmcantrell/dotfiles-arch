@@ -45,6 +45,7 @@ xorg-apps
 xorg-server
 xorg-xinit
 xsel
+xterm
 zathura
 zathura-cb
 zathura-djvu
