@@ -12,7 +12,7 @@ url="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 for name in "$@"; do
     # Don't build package if it's already installed.
-    if pacman -Qq | grep -q "^$name$"; then
+    if pacman -Qq | grep -wq "$name"; then
         continue
     fi
 
