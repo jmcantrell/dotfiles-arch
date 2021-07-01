@@ -22,9 +22,4 @@ alias pacqq='pacman -Qqs' # short list
 # Show packages containing filename.
 alias pacf='pkgfile -sir' # <pattern>
 
-# Show package contents.
-pacls() {
-    pkgfile -l "$@" | cut -f2 | grep -v '/$'
-}
-
 # vi:ft=sh
