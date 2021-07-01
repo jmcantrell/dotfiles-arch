@@ -2,7 +2,7 @@
 
 # Install and configure Docker.
 
-set -e
+set -euo pipefail
 
 sudo pacman -Sy --noconfirm --needed docker docker-compose
 sudo systemctl enable --now docker.service

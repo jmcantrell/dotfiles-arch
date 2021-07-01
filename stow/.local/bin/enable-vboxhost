@@ -2,7 +2,7 @@
 
 # Install and configure virtualbox to be used as a virtual machine host.
 
-set -e
+set -euo pipefail
 
 sudo pacman -Sy --noconfirm --needed virtualbox virtualbox-host-modules-arch
 pikaur -Sy --noconfirm --needed virtualbox-ext-oracle

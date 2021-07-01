@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Configure localhost as a virtualbox guest.
 
-set -e
+set -euo pipefail
 
 sudo pacman -S --noconfirm --needed virtualbox-guest-utils
 sudo systemctl --now enable vboxservice.service

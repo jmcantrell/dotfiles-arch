@@ -1,8 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Install and configure the Mullvad VPN app.
 
-set -e
+set -euo pipefail
 
 gpg --recv-keys A26581F219C8314C
 pikaur -Sy --noconfirm --needed mullvad-vpn-bin

@@ -2,7 +2,7 @@
 
 # Simple AUR package builder and installer.
 
-set -e
+set -euo pipefail
 
 temp=$(mktemp -d -t aur-install.XXXXXXXXXX)
 trap 'rm -rf "$temp"' INT TERM EXIT
