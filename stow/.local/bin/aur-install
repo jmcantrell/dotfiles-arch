@@ -4,19 +4,25 @@
 
 set -euo pipefail
 
-temp=$(mktemp -d -t aur-install.XXXXXXXXXX)
-trap 'rm -rf "$temp"' INT TERM EXIT
+me=${0##*/}
+temp_dir=$(mktemp -d -t "$me".XXXXXXXXXX)
+trap 'rm -rf "$temp_dir"' INT TERM EXIT
 
 url="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 for name in "$@"; do
-    cd "$temp"
+    # Don't build package if it's already installed.
+    if pacman -Qq | grep -q "^$name$"; then
+        continue
+    fi
+
+    cd "$temp_dir"
 
     package=$name.tar.gz
     curl -L -o "$package" "$url/$package"
     tar -x -f "$package"
 
-    cd "$temp/$name"
+    cd "$temp_dir/$name"
 
     makepkg -fsri --noconfirm
 done
