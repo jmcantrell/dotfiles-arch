@@ -1,5 +1,4 @@
 acpi
-amfora
 aria2
 aspell-en
 astyle
@@ -70,7 +69,6 @@ ripgrep
 rust-analyzer
 shellcheck
 shfmt
-snarf
 socat
 sox
 sysstat
