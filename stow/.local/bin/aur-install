@@ -11,11 +11,6 @@ trap 'rm -rf "$temp_dir"' INT TERM EXIT
 url="https://aur.archlinux.org/cgit/aur.git/snapshot"
 
 for name in "$@"; do
-    # Don't build package if it's already installed.
-    if pacman -Qq | grep -wq "$name"; then
-        continue
-    fi
-
     cd "$temp_dir"
 
     package=$name.tar.gz
