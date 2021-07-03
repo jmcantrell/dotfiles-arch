@@ -4,11 +4,13 @@
 
 set -euo pipefail
 
+: "$MULLVAD_ACCOUNT"
+
 gpg --recv-keys A26581F219C8314C
 pikaur -Sy --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service
 
-mullvad account set "${MULLVAD_ACCOUNT:?MULLVAD_ACCOUNT not set}"
+mullvad account set "$MULLVAD_ACCOUNT"
 mullvad auto-connect set on
 mullvad lan set allow
 mullvad tunnel ipv6 set on
