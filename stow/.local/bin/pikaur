@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 
+# Wrapper for `pikaur` that ensures PATH overrides are cleared.
+
 # Most packages in the AUR need to be built, which requires tooling that is
 # assumed to be the system version. I usually have different versions
 # of those tools in my PATH (using pyenv, rustup, etc.), which can cause the
-# package build to fail. This tries to decontaminate the build environment by
-# restoring PATH to the default system state.
+# package build to fail.
+
+# This tries to decontaminate the environment by restoring PATH to the default
+# system state.
 
 set -e
 
