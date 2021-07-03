@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure CUPS printing.
+
 set -euo pipefail
 
 sudo pacman -Sy --noconfirm --needed \

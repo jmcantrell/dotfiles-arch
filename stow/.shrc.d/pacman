@@ -17,7 +17,7 @@ alias paco='pacman -Qdt'
 
 # Search installed packages.
 alias pacq='pacman -Qs'   # detailed list
-alias pacqq='pacman -Qqs' # short list
+alias pacqq='pacman -Qqs' # just package names
 
 # Show packages containing filename.
 alias pacf='pkgfile -sir' # <pattern>

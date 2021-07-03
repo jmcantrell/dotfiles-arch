@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install and configure virtualbox to be used as a virtual machine host.
+# Install and configure VirtualBox to be used as a virtual machine host.
 
 set -euo pipefail
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install and configure the PostgreSQL database.
+# Install and configure a PostgreSQL database.
 
 set -euo pipefail
 

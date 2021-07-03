@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Configure localhost as a virtualbox guest.
+# Configure localhost as a VirtualBox guest.
 
 set -euo pipefail
 

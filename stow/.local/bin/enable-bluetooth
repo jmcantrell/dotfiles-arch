@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure bluetooth support.
+
 set -euo pipefail
 
 sudo pacman -Sy --noconfirm --needed blueman bluez bluez-utils
