@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-name=$1
+name=${1:-""}
 
 pacman_list=$PWD/packages/pacman${name:+-$name}
 aur_list=$PWD/packages/aur${name:+-$name}
