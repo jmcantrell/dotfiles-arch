@@ -17,7 +17,6 @@ eslint
 exa
 ffmpeg
 ffmpegthumbnailer
-flake8
 gdb
 gifsicle
 glances
@@ -62,6 +61,8 @@ pwgen
 python-black
 python-pillow
 python-poetry
+python-pycodestyle
+python-pydocstyle
 python-pynvim
 ranger
 redis
