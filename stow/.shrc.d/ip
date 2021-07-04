@@ -1,5 +1,4 @@
 alias ip='ip -color -human'
-
 alias ipl='ip link'
 alias ipn='ip neigh'
 alias ipa='ip address'

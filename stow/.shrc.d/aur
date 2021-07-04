@@ -1,8 +1,16 @@
+# Don't prompt for editing or viewing diffs for packages.
 alias pikaur='pikaur --noedit --nodiff'
 
+# Search for packages.
 alias aurs='pikaur -Ss'
+
+# Install packages.
 alias auri='pikaur -S'
+
+# Show package information.
 alias aursh='pikaur -Si'
+
+# Upgrade installed packages.
 alias aurup='pikaur -Syu'
 
 # vi:ft=sh

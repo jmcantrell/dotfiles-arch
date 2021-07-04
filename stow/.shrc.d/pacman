@@ -1,23 +1,30 @@
 alias pacman='pacman --color=auto'
-
 alias pac='pacman'
-alias pacs='pacman -Ss'
-alias paci='sudo pacman -Sy'
-alias pacup='sudo pacman -Syu'
-alias pacrm='sudo pacman -Rs'
+
+# Search for packages.
+alias pacs='pac -Ss'
+
+# Install packages.
+alias paci='sudo pac -Sy'
+
+# Remove packages.
+alias pacrm='sudo pac -Rs'
 
 # Show package information.
-alias pacsh='pacman -Si'
+alias pacsh='pac -Si'
+
+# Upgrade installed packages.
+alias pacup='sudo pac -Syu'
 
 # Remove unused packages.
-alias pacx='sudo pacman -Sc'
+alias pacx='sudo pac -Sc'
 
 # Show unrequired packages.
-alias paco='pacman -Qdt'
+alias paco='pac -Qdt'
 
 # Search installed packages.
-alias pacq='pacman -Qs'   # detailed list
-alias pacqq='pacman -Qqs' # just package names
+alias pacq='pac -Qs'   # detailed list
+alias pacqq='pac -Qqs' # just package names
 
 # Show packages containing filename.
 alias pacf='pkgfile -sir' # <pattern>
