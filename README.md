@@ -7,7 +7,7 @@ My configuration files and scripts for Arch Linux.
 Clone this repository:
 
 ```
-$ git clone git@github.com:jmcantrell/dotfiles-arch.git ~/.dotfiles-arch
+$ git clone git@gitlab.com:jmcantrell/dotfiles-arch.git ~/.dotfiles-arch
 $ cd ~/.dotfiles-arch
 ```
 
