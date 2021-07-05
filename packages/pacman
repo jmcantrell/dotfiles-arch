@@ -33,6 +33,7 @@ jdk-openjdk
 jedi-language-server
 jq
 libcaca
+libjpeg-turbo
 lldb
 lshw
 lsof
