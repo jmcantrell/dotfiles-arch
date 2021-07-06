@@ -52,6 +52,7 @@ odt2txt
 optipng
 p7zip
 pacman-contrib
+pacutils
 pandoc
 parallel
 pass
