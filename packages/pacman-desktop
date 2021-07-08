@@ -45,6 +45,7 @@ xorg-apps
 xorg-server
 xorg-xinit
 xsel
+xss-lock
 xterm
 zathura
 zathura-cb
