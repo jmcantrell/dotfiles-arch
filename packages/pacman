@@ -17,6 +17,7 @@ eslint
 exa
 ffmpeg
 ffmpegthumbnailer
+flake8
 gdb
 gifsicle
 glances
@@ -44,6 +45,7 @@ mediainfo
 mkcert
 mkvtoolnix-cli
 moreutils
+mypy
 ncdu
 neovim
 net-tools
@@ -61,11 +63,12 @@ postgresql
 prettier
 pwgen
 python-black
-python-pillow
+python-pip
+python-pipenv
 python-poetry
-python-pycodestyle
-python-pydocstyle
+python-pudb
 python-pynvim
+python-wheel
 ranger
 redis
 ripgrep
@@ -84,6 +87,7 @@ tig
 tldr
 trash-cli
 tree
+twine
 unrar
 unzip
 usbutils
