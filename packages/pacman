@@ -8,6 +8,7 @@ bat
 bpython
 bridge-utils
 catdoc
+clang
 ctags
 dhcping
 dnsmasq
