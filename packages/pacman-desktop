@@ -21,6 +21,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 pamixer
 paprefs
+pasystray
 pavucontrol
 playerctl
 pulseaudio
@@ -38,7 +39,6 @@ ttf-liberation
 ttf-roboto
 udiskie
 unclutter
-volumeicon
 wmctrl
 xdotool
 xorg-apps
