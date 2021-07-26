@@ -4,6 +4,6 @@
 
 set -euo pipefail
 
-sudo pacman -Sy --noconfirm --needed go-ipfs
+sudo pacman -S --noconfirm --needed go-ipfs
 ipfs init
 systemctl --user enable --now ipfs.service

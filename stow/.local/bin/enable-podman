@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-sudo pacman -Sy --noconfirm --needed podman
+sudo pacman -S --noconfirm --needed podman
 
 sudo touch /etc/sub{uid,gid}
 sudo usermod --add-subuids 100000-165536 --add-subgids 100000-165536 "$USER"

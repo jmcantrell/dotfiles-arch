@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-sudo pacman -Sy --noconfirm --needed snapper snap-pac
+sudo pacman -S --noconfirm --needed snapper snap-pac
 
 readarray -t subvols < <(
     sudo btrfs subvolume list / |

@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-sudo pacman -Sy --noconfirm --needed postgresql
+sudo pacman -S --noconfirm --needed postgresql
 
 postgres=/var/lib/postgres
 data=$postgres/data

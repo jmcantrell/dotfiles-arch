@@ -4,5 +4,5 @@
 
 set -euo pipefail
 
-sudo pacman -Sy --noconfirm --needed blueman bluez bluez-utils
+sudo pacman -S --noconfirm --needed blueman bluez bluez-utils
 sudo systemctl enable --now bluetooth.service
