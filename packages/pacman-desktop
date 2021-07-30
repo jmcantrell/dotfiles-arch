@@ -1,4 +1,3 @@
-alacritty
 alsa-utils
 arc-gtk-theme
 arc-icon-theme
@@ -24,9 +23,10 @@ pamixer
 paprefs
 pasystray
 pavucontrol
+pipewire
+pipewire-alsa
+pipewire-pulse
 playerctl
-pulseaudio
-pulseaudio-alsa
 py3status
 qemu
 rofi
