@@ -49,7 +49,6 @@ lynx
 man-db
 man-pages
 mariadb
-markdown
 mdcat
 mediainfo
 mkcert
@@ -82,7 +81,6 @@ python-wheel
 ranger
 redis
 ripgrep
-rsync
 rust-analyzer
 shellcheck
 shfmt
@@ -113,7 +111,6 @@ wget
 whois
 wireguard-tools
 words
-xdg-user-dirs
 xmlstarlet
 yq
 zip

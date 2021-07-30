@@ -4,6 +4,7 @@ arc-icon-theme
 cbatticon
 dex
 dunst
+firefox
 gnome-icon-theme
 gnome-icon-theme-extras
 gnome-icon-theme-symbolic
@@ -41,6 +42,7 @@ ttf-roboto
 udiskie
 unclutter
 wmctrl
+xdg-user-dirs
 xdotool
 xorg-apps
 xorg-server
