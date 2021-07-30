@@ -4,12 +4,15 @@ aspell-en
 astyle
 atool
 bandit
+base-devel
+bash-completion
 bat
 bpython
 bridge-utils
 catdoc
 clang
 ctags
+curl
 dhcping
 ditaa
 dnsmasq
@@ -22,6 +25,7 @@ ffmpegthumbnailer
 flake8
 gdb
 gifsicle
+git
 glances
 gnu-netcat
 highlight
@@ -37,10 +41,13 @@ jedi-language-server
 jq
 libcaca
 libjpeg-turbo
+linux-headers
 lldb
 lshw
 lsof
 lynx
+man-db
+man-pages
 mariadb
 markdown
 mdcat
@@ -75,11 +82,14 @@ python-wheel
 ranger
 redis
 ripgrep
+rsync
 rust-analyzer
 shellcheck
 shfmt
 socat
 sox
+sshfs
+stow
 sysstat
 tcpdump
 termshark
@@ -88,6 +98,7 @@ texlive-core
 texlive-latexextra
 tig
 tldr
+tmux
 trash-cli
 tree
 twine
@@ -95,8 +106,10 @@ unrar
 unzip
 usbutils
 valgrind
+vim
 websocat
 weechat
+wget
 whois
 wireguard-tools
 words
@@ -104,3 +117,5 @@ xdg-user-dirs
 xmlstarlet
 yq
 zip
+zsh
+zsh-completions
