@@ -22,6 +22,10 @@ alias pacx='sudo pac -Sc'
 # Show unrequired packages.
 alias paco='pac -Qdt'
 
+# Show explicitly installed packages.
+alias pacls='pac -Qqe' # just package names
+alias pacll='pac -Qe'  # with versions
+
 # Search installed packages.
 alias pacq='pac -Qs'   # detailed list
 alias pacqq='pac -Qqs' # just package names
