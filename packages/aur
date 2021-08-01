@@ -1,5 +1,4 @@
 as-tree-bin
 direnv-bin
-git-archive-all
 gron-bin
 nixfmt
