@@ -13,7 +13,6 @@ clang
 ctags
 curl
 dhcping
-ditaa
 dnsmasq
 dos2unix
 entr
@@ -51,7 +50,6 @@ mariadb
 mdcat
 mediainfo
 mkcert
-mkvtoolnix-cli
 moreutils
 mypy
 ncdu
