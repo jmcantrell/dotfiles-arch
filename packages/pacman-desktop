@@ -35,6 +35,8 @@ pipewire-pulse
 playerctl
 py3status
 qemu
+qt5ct
+qt6ct
 rofi
 rofi-calc
 rofimoji
