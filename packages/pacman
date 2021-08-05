@@ -1,6 +1,7 @@
 aria2
 aspell-en
 astyle
+at
 atool
 bandit
 base-devel
@@ -51,6 +52,7 @@ mariadb
 mdcat
 mediainfo
 mkcert
+mlocate
 moreutils
 mypy
 ncdu
@@ -65,6 +67,7 @@ pandoc
 parallel
 pass
 perl-image-exiftool
+pkgfile
 postgresql
 prettier
 pwgen
@@ -97,6 +100,7 @@ tmux
 trash-cli
 tree
 twine
+ufw
 unrar
 unzip
 usbutils
