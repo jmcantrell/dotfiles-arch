@@ -6,7 +6,7 @@ set -euo pipefail
 
 : "$MULLVAD_ACCOUNT"
 
-gpg --recv-keys A26581F219C8314C
+curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
 pikaur -Sy --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service
 
