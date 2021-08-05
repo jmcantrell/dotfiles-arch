@@ -54,6 +54,7 @@ wmctrl
 xdg-user-dirs
 xdotool
 xorg-apps
+xorg-drivers
 xorg-server
 xorg-xinit
 xsel
