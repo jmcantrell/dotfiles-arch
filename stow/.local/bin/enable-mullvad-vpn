@@ -10,6 +10,11 @@ curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
 pikaur -Sy --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service
 
+app_file=/usr/share/applications/mullvad-vpn.desktop
+autostart_dir=${XDG_CONFIG_HOME:-$HOME/.config}/autostart
+mkdir -p "$autostart_dir"
+ln -sfv "$app_file" "$autostart_dir/${app_file##*/}"
+
 mullvad account set "$MULLVAD_ACCOUNT"
 mullvad auto-connect set on
 mullvad lan set allow
