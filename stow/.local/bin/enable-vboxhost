@@ -5,7 +5,8 @@
 set -euo pipefail
 
 sudo pacman -S --noconfirm --needed virtualbox virtualbox-host-modules-arch
-pikaur -S --noconfirm --needed virtualbox-ext-oracle
+xargs -r -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
+
 sudo gpasswd -a "$USER" vboxusers
 
 vms_dir=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
