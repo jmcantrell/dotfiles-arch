@@ -80,6 +80,7 @@ python-wheel
 ranger
 redis
 ripgrep
+rsync
 rust-analyzer
 shellcheck
 shfmt
