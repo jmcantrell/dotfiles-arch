@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-sudo rsync -avb --no-owner --no-group --suffix=.pacnew ./rootfs/ /
+sudo rsync -v -a --no-owner --no-group -b --suffix=.pacnew ./rootfs/ /
 
 sudo systemctl enable atd.service
 
