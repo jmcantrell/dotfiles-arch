@@ -42,6 +42,7 @@ libcaca
 libjpeg-turbo
 linux-headers
 lldb
+logrotate
 lshw
 lsof
 lynx
