@@ -2,7 +2,7 @@
 
 # Install and configure an IPFS daemon.
 
-set -euo pipefail
+set -eu
 
 sudo pacman -S --noconfirm --needed go-ipfs
 ipfs init

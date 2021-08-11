@@ -2,7 +2,7 @@
 
 # Install and configure the Mullvad VPN app.
 
-set -euo pipefail
+set -eu
 
 : "$MULLVAD_ACCOUNT"
 

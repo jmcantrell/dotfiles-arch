@@ -2,7 +2,7 @@
 
 # Install and configure the MySQL database.
 
-set -euo pipefail
+set -eu
 
 sudo pacman -S --noconfirm --needed mariadb
 

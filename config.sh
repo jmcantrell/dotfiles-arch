@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
+set -eu
 
 sudo rsync -v -a --no-owner --no-group ./rootfs/ /
 

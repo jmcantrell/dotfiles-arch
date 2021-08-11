@@ -2,7 +2,7 @@
 
 # Simple AUR package builder and installer.
 
-set -euo pipefail
+set -eu
 
 me=${0##*/}
 temp_dir=$(mktemp -d -t "$me".XXXXXXXXXX)

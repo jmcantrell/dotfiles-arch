@@ -2,7 +2,7 @@
 
 # Install and configure VirtualBox to be used as a virtual machine host.
 
-set -euo pipefail
+set -eu
 
 sudo pacman -S --noconfirm --needed virtualbox virtualbox-host-modules-arch
 xargs -r -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf

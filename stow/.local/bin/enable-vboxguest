@@ -2,7 +2,7 @@
 
 # Configure localhost as a VirtualBox guest.
 
-set -euo pipefail
+set -eu
 
 if which Xorg &>/dev/null; then
     sudo pacman -R --noconfirm virtualbox-guest-utils
