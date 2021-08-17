@@ -4,10 +4,15 @@ set -eu
 
 sudo rsync -v -a --no-owner --no-group ./rootfs/ /
 
-sudo systemctl enable atd.service
+sudo systemctl enable --now atd.service
 
-sudo systemctl enable pkgfile-update.timer
+sudo systemctl enable --now pkgfile-update.timer
 sudo pkgfile -u
+
+sudo systemctl enable --now plocate-updatedb.timer
+sudo chgrp -R locate /var/lib/plocate
+sudo chown -R g+w /var/lib/plocate
+sudo gpasswd -a "$USER" locate
 
 systemctl --user enable --now ssh-agent.service
 

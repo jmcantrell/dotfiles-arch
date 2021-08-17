@@ -52,7 +52,6 @@ mariadb
 mdcat
 mediainfo
 mkcert
-mlocate
 moreutils
 mypy
 ncdu
@@ -68,16 +67,13 @@ parallel
 pass
 perl-image-exiftool
 pkgfile
+plocate
 postgresql
 prettier
 pwgen
 python-black
-python-pip
-python-pipenv
-python-poetry
 python-pudb
 python-pynvim
-python-wheel
 ranger
 redis
 ripgrep
