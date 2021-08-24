@@ -16,7 +16,6 @@ ctags
 curl
 dhcping
 dnsmasq
-dos2unix
 entr
 eslint
 exa
@@ -113,7 +112,6 @@ whois
 wireguard-tools
 words
 xmlstarlet
-yq
 zip
 zsh
 zsh-completions
