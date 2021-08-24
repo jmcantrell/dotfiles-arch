@@ -11,7 +11,7 @@ sudo pkgfile -u
 
 sudo systemctl enable --now plocate-updatedb.timer
 sudo chgrp -R locate /var/lib/plocate
-sudo chown -R g+w /var/lib/plocate
+sudo chmod -R g+w /var/lib/plocate
 sudo gpasswd -a "$USER" locate
 
 systemctl --user enable --now ssh-agent.service
