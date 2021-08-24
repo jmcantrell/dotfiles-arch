@@ -55,6 +55,7 @@ mdcat
 mediainfo
 mkcert
 moreutils
+mypy
 namcap
 ncdu
 neovim
