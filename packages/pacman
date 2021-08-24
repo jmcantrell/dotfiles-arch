@@ -3,6 +3,7 @@ aspell-en
 astyle
 at
 atool
+aurpublish
 bandit
 base-devel
 bash-completion
@@ -19,6 +20,7 @@ dos2unix
 entr
 eslint
 exa
+expac
 ffmpeg
 ffmpegthumbnailer
 flake8
@@ -53,7 +55,7 @@ mdcat
 mediainfo
 mkcert
 moreutils
-mypy
+namcap
 ncdu
 neovim
 net-tools
@@ -72,6 +74,7 @@ postgresql
 prettier
 pwgen
 python-black
+python-build
 python-pudb
 python-pynvim
 ranger

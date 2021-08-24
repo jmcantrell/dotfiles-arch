@@ -11,7 +11,9 @@ data=$postgres/data
 config=$data/postgresql.conf
 
 # Disable copy-on-write if on a btrfs file system.
-[[ $(stat -f -c %T /var) == btrfs ]] && sudo chattr +C "$postgres"
+if [[ $(stat -f -c %T /var) == btrfs ]]; then
+    sudo chattr +C "$postgres"
+fi
 
 sudo -u postgres -i initdb --no-locale --encoding=utf-8 --pgdata="$data"
 

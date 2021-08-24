@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# Configure localhost as a VirtualBox guest.
+
+set -eu
+
+if which Xorg &>/dev/null; then
+    if pacman -Qq | grep -wq virtualbox-guest-utils-nox; then
+        sudo pacman -R --noconfirm virtualbox-guest-utils-nox
+    fi
+    sudo pacman -S --noconfirm --needed virtualbox-guest-utils
+else
+    sudo pacman -S --noconfirm --needed virtualbox-guest-utils-nox
+fi
+
+sudo systemctl --now enable vboxservice.service
+sudo modprobe -a vboxguest vboxsf vboxvideo
+sudo gpasswd -a "$USER" vboxsf

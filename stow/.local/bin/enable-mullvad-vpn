@@ -20,4 +20,4 @@ mullvad auto-connect set on
 mullvad lan set allow
 mullvad tunnel ipv6 set on
 mullvad relay set tunnel-protocol wireguard
-mullvad relay set location us nyc
+mullvad relay set location "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
