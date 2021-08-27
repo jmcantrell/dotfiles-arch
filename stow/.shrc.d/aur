@@ -13,4 +13,7 @@ alias aursh='pikaur -Si'
 # Upgrade installed packages.
 alias aurup='pikaur -Syu'
 
+# Remove unused packages.
+alias aurx='pikaur -Sc'
+
 # vi:ft=sh
