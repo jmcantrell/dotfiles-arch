@@ -28,6 +28,7 @@ gifsicle
 git
 glances
 gnu-netcat
+haskell-language-server
 highlight
 iftop
 imagemagick
@@ -94,7 +95,6 @@ termshark
 texlive-bin
 texlive-core
 texlive-latexextra
-tig
 tldr
 tmux
 trash-cli
