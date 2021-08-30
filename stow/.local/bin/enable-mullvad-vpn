@@ -4,8 +4,6 @@
 
 set -eu
 
-: "$MULLVAD_ACCOUNT"
-
 curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
 pikaur -Sy --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service

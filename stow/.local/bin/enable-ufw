@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure a firewall.
+
 set -eu
 
 sudo pacman -S --noconfirm --needed ufw

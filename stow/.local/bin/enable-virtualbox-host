@@ -10,6 +10,7 @@ xargs -r -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-
 sudo gpasswd -a "$USER" vboxusers
 
 vms_dir=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
+
 mkdir -p "$vms_dir"
 
 vboxmanage setproperty machinefolder "$vms_dir"
