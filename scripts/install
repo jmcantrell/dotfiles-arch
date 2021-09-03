@@ -12,6 +12,8 @@ if [[ -f $pacman_list ]]; then
 fi
 
 if [[ -f $aur_list ]]; then
-    which pikaur &>/dev/null || ./stow/.local/bin/aur-install pikaur
+    if ! which pikaur &>/dev/null; then
+        ./stow/.local/bin/enable-pikaur
+    fi
     pikaur -S --noconfirm --needed - <"$aur_list"
 fi

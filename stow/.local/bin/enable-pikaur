@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Install and configure an AUR helper.
+
+set -eu
+
+aur-install pikaur
+
+systemctl --user enable --now pikaur-cache.timer
