@@ -8,7 +8,7 @@ Clone this repository:
 
 ```sh
 git clone git@gitlab.com:jmcantrell/dotfiles-arch.git ~/.dotfiles-arch
-cd ~/.dotfiles
+cd ~/.dotfiles-arch
 ```
 
 Symlink files, install packages, and configure system:
