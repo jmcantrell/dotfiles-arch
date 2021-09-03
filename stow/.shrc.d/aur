@@ -14,6 +14,11 @@ alias aursh='pikaur -Si'
 alias aurup='pikaur -Syu'
 
 # Remove unused packages.
-alias aurx='pikaur -Sc'
+aurx() {
+    pacx
+    local pikaur_cache=$HOME/.local/var/cache/pikaur/pkg
+    paccache -vrk1 -c "$pikaur_cache"
+    paccache -vruk0 -c "$pikaur_cache"
+}
 
 # vi:ft=sh

@@ -16,9 +16,6 @@ alias pacsh='pac -Si'
 # Upgrade installed packages.
 alias pacup='sudo pac -Syu'
 
-# Remove unused packages.
-alias pacx='sudo pac -Sc'
-
 # Show unrequired packages.
 alias paco='pac -Qdt'
 
@@ -32,5 +29,11 @@ alias pacqq='pac -Qqs' # just package names
 
 # Show packages containing filename.
 alias pacf='pkgfile -sir' # <pattern>
+
+pacx() {
+    local pacman_cache=/var/cache/pacman/pkg
+    sudo paccache -vrk1 -c "$pacman_cache"
+    sudo paccache -vruk0 -c "$pacman_cache"
+}
 
 # vi:ft=sh
