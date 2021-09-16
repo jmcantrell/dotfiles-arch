@@ -42,6 +42,7 @@ jedi-language-server
 jq
 libcaca
 libjpeg-turbo
+libxml2
 linux-headers
 lldb
 logrotate
