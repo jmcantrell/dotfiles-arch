@@ -23,6 +23,8 @@ pipewire-alsa
 pipewire-pulse
 playerctl
 python-adblock
+qt5-wayland
+qt6-wayland
 qutebrowser
 slurp
 swappy
