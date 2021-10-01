@@ -14,7 +14,7 @@ fi
 export PATH=$PWD/stow/.local/bin:$PATH
 
 if [[ -f $aur_list ]]; then
-    if ! which pikaur &>/dev/null; then
+    if [[ ! -x /usr/bin/pikaur ]]; then
         enable-pikaur
     fi
     pikaur -S --noconfirm --needed - <"$aur_list"
