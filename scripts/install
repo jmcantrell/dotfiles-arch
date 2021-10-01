@@ -11,9 +11,11 @@ if [[ -f $pacman_list ]]; then
     sudo cat "$pacman_list" | sudo pacman -S --noconfirm --needed -
 fi
 
+export PATH=$PWD/stow/.local/bin:$PATH
+
 if [[ -f $aur_list ]]; then
     if ! which pikaur &>/dev/null; then
-        ./stow/.local/bin/enable-pikaur
+        enable-pikaur
     fi
     pikaur -S --noconfirm --needed - <"$aur_list"
 fi
