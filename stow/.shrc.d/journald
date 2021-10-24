@@ -7,7 +7,7 @@ alias jb='journalctl -b'
 alias ju='journalctl -u'
 
 # Follow recent messages.
-alias jf='journalctl -fb'
+alias jf='journalctl -f'
 
 # Show logged boots.
 alias jlb='journalctl --list-boots'
