@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+sudo pacman -S --noconfirm --needed nix
+sudo systemctl enable --now nix-daemon.service
+
+sudo gpasswd -a "$USER" nix-users
+newgrp nix-users
+
+nix-channel --add https://nixos.org/channels/nixpkgs-unstable
+nix-channel --update
