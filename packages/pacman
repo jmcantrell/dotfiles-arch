@@ -15,6 +15,7 @@ clang
 ctags
 curl
 dhcping
+direnv
 dnsmasq
 entr
 eslint
