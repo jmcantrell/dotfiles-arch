@@ -47,6 +47,7 @@ libxml2
 linux-headers
 lldb
 logrotate
+lostfiles
 lshw
 lsof
 lynx
