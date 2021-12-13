@@ -81,7 +81,6 @@ python-black
 python-build
 python-pudb
 python-pynvim
-ranger
 redis
 ripgrep
 rsync
