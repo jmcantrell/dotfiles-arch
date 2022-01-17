@@ -16,7 +16,7 @@ alias aurup='pikaur -Syu'
 # Remove unused packages.
 aurx() {
     pacx
-    local pikaur_cache=$HOME/.local/var/cache/pikaur/pkg
+    local pikaur_cache=${XDG_CACHE_HOME:-$HOME/.cache}/pikaur/pkg
     paccache -vrk1 -c "$pikaur_cache"
     paccache -vruk0 -c "$pikaur_cache"
 }
