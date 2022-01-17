@@ -15,3 +15,4 @@ sudo chmod -R g+w /var/lib/plocate
 sudo gpasswd -a "$USER" locate
 
 systemctl --user enable --now ssh-agent.service
+systemctl --user enable --now pipewire.service pipewire-{pulse,media-session}.service
