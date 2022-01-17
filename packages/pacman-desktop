@@ -45,3 +45,7 @@ wtype
 xdg-user-dirs
 xorg-xwayland
 zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-mupdf
+zathura-ps
