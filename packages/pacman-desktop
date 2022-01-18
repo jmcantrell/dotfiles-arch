@@ -3,6 +3,7 @@ alsa-utils
 arc-gtk-theme
 arc-icon-theme
 bemenu-wayland
+calibre
 firefox
 gcr
 gnome-icon-theme
@@ -24,6 +25,7 @@ pipewire-pulse
 playerctl
 python-adblock
 qt5-wayland
+qt5ct
 qt6-wayland
 qutebrowser
 slurp
