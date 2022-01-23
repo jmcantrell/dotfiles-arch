@@ -1,4 +1,5 @@
 # Don't prompt for editing or viewing diffs for packages.
+# WARNING: This is a security risk. PKGBUILDs should be inspected first.
 alias pikaur='pikaur --noedit --nodiff'
 
 # Search for packages.

@@ -10,3 +10,4 @@ sudo systemctl enable --now ufw.service
 sudo ufw default deny
 sudo ufw allow ssh
 sudo ufw allow mdns
+sudo ufw allow 49152:65535/tcp
