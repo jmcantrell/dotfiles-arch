@@ -63,6 +63,7 @@ ncdu
 neovim
 net-tools
 odt2txt
+openssl
 optipng
 p7zip
 pacman-contrib
@@ -113,6 +114,8 @@ whois
 wireguard-tools
 words
 xmlstarlet
+xz
 zip
+zlib
 zsh
 zsh-completions
