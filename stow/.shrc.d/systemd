@@ -1,8 +1,0 @@
-alias sys='systemctl'
-alias syss='systemctl status --all'
-alias sysu='systemctl --user status --all'
-alias sysls='systemctl list-unit-files'
-alias syslf='systemctl --failed'
-alias sysla='systemctl list-units --all'
-
-# vi:ft=sh

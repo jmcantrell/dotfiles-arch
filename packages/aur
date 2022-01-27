@@ -2,5 +2,6 @@ as-tree-bin
 btrfs-snapshots-git
 git-archive-all
 gron-bin
+ncspot
 nixfmt
 ranger-git
