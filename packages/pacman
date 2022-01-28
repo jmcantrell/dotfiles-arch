@@ -4,7 +4,6 @@ aspell-en
 astyle
 at
 atool
-aurpublish
 bandit
 base-devel
 bash-completion
@@ -21,6 +20,7 @@ dnsmasq
 entr
 eslint
 expac
+fd
 ffmpeg
 flake8
 gdb
@@ -28,7 +28,6 @@ gifsicle
 git
 glances
 gnu-netcat
-haskell-language-server
 highlight
 iftop
 imagemagick
@@ -84,7 +83,6 @@ python-pynvim
 redis
 ripgrep
 rsync
-rust-analyzer
 shellcheck
 shfmt
 socat

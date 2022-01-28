@@ -13,8 +13,8 @@ url="https://aur.archlinux.org/cgit/aur.git/snapshot"
 for name in "$@"; do
     package=$name.tar.gz
 
-    curl -L -o "$temp_dir/$package" "$url/$package"
-    tar -x -f "$temp_dir/$package" -C "$temp_dir"
+    curl --location --output "$temp_dir/$package" "$url/$package"
+    tar --directory "$temp_dir" --extract --file "$temp_dir/$package"
 
     cd "$temp_dir/$name"
 
