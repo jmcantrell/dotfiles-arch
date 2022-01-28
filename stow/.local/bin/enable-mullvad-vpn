@@ -11,7 +11,7 @@ set -eu
     "$MULLVAD_CITY"
 
 curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
-pikaur -S --noconfirm --needed mullvad-vpn-bin
+pikaur --sync --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service
 
 mullvad account set "$MULLVAD_ACCOUNT"

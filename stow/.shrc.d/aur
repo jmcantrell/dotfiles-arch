@@ -3,23 +3,23 @@
 alias pikaur='pikaur --noedit --nodiff'
 
 # Search for packages.
-alias aurs='pikaur -Ss'
+alias aurs='pikaur --sync --search'
 
 # Install packages.
-alias auri='pikaur -S'
+alias auri='pikaur --sync'
 
 # Show package information.
-alias aursh='pikaur -Si'
+alias aursh='pikaur --sync --info'
 
 # Upgrade installed packages.
-alias aurup='pikaur -Syu'
+alias aurup='pikaur --sync --refresh --sysupgrade'
 
 # Remove unused packages.
 aurx() {
     pacx
-    local pikaur_cache=${XDG_CACHE_HOME:-$HOME/.cache}/pikaur/pkg
-    paccache -vrk1 -c "$pikaur_cache"
-    paccache -vruk0 -c "$pikaur_cache"
+    local dir=${XDG_CACHE_HOME:-$HOME/.cache}/pikaur/pkg
+    paccache -v --cachedir "$dir" --remove --keep 1
+    paccache -v --cachedir "$dir" --remove --keep 0 --uninstalled
 }
 
 # vi:ft=sh

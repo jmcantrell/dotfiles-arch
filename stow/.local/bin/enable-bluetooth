@@ -4,5 +4,5 @@
 
 set -eu
 
-sudo pacman -S --noconfirm --needed blueman bluez bluez-utils
+sudo pacman --sync --noconfirm --needed blueman bluez bluez-utils
 sudo systemctl enable --now bluetooth.service

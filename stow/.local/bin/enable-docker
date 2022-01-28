@@ -4,6 +4,6 @@
 
 set -eu
 
-sudo pacman -S --noconfirm --needed docker docker-compose
+sudo pacman --sync --noconfirm --needed docker docker-compose
 sudo systemctl enable --now docker.service
-sudo gpasswd -a "$USER" docker
+sudo gpasswd --add "$USER" docker

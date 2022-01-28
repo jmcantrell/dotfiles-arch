@@ -3,6 +3,6 @@ alias ipl='ip link'
 alias ipn='ip neigh'
 alias ipa='ip address'
 alias ipr='ip route'
-alias ipmon='ip -ts monitor'
+alias ipmon='ip -tshort monitor'
 
 # vi:ft=sh

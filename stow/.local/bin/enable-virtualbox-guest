@@ -4,7 +4,7 @@
 
 set -eu
 
-sudo pacman -S --noconfirm --needed virtualbox-guest-utils-nox
+sudo pacman --sync --noconfirm --needed virtualbox-guest-utils-nox
 sudo systemctl --now enable vboxservice.service
-sudo modprobe -a vboxguest vboxsf vboxvideo
-sudo gpasswd -a "$USER" vboxsf
+sudo modprobe --all vboxguest vboxsf vboxvideo
+sudo gpasswd --add "$USER" vboxsf

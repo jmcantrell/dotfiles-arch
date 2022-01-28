@@ -4,5 +4,5 @@
 
 set -eu
 
-sudo pacman -S --noconfirm --needed nftables
+sudo pacman --sync --noconfirm --needed nftables
 sudo systemctl enable --now nftables.service

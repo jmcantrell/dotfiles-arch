@@ -4,10 +4,10 @@
 
 set -eu
 
-sudo pacman -S --noconfirm --needed virtualbox virtualbox-host-modules-arch
-xargs -r -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
+sudo pacman --sync --noconfirm --needed virtualbox virtualbox-host-modules-arch
+xargs -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
 
-sudo gpasswd -a "$USER" vboxusers
+sudo gpasswd --add "$USER" vboxusers
 
 vms_dir=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
 

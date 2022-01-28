@@ -1,13 +1,13 @@
-alias j='journalctl -q'
+alias j='journalctl --quiet'
 
 # Show messages from boot.
-alias jb='journalctl -b'
+alias jb='journalctl --boot' # ID (or none for last boot)
 
 # Show messages for unit.
-alias ju='journalctl -u'
+alias ju='journalctl --unit'
 
 # Follow recent messages.
-alias jf='journalctl -f'
+alias jf='journalctl --follow'
 
 # Show logged boots.
 alias jlb='journalctl --list-boots'

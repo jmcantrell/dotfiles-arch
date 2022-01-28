@@ -18,5 +18,5 @@ for name in "$@"; do
 
     cd "$temp_dir/$name"
 
-    makepkg -fsri --noconfirm
+    makepkg --force --syncdeps --install --noconfirm
 done

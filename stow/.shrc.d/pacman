@@ -1,38 +1,38 @@
 alias pacman='pacman --color=auto'
 
 # Search for packages.
-alias pacs='pacman -Ss'
+alias pacs='pacman --sync --search'
 
 # Install packages.
-alias paci='sudo pacman -Sy'
+alias paci='sudo pacman --sync --refresh'
 
 # Remove packages.
-alias pacrm='sudo pacman -Rs'
+alias pacrm='sudo pacman --remove --recursive'
 
 # Show package information.
-alias pacsh='pacman -Si'
+alias pacsh='pacman --sync --info'
 
 # Upgrade installed packages.
-alias pacup='sudo pacman -Syu'
+alias pacup='sudo pacman --sync --refresh --sysupgrade'
 
 # Show unrequired packages.
-alias paco='pacman -Qdt'
+alias paco='pacman --query --deps --unrequired'
 
 # Show explicitly installed packages.
-alias pacls='pacman -Qqe' # just package names
-alias pacll='pacman -Qe'  # with versions
+alias pacls='pacman --query --explicit --quiet' # just package names
+alias pacll='pacman --query --explicit'         # with versions
 
 # Search installed packages.
-alias pacq='pacman -Qs'   # detailed list
-alias pacqq='pacman -Qqs' # just package names
+alias pacq='pacman --query --search'          # detailed list
+alias pacqq='pacman --query --search --quiet' # just package names
 
 # Show packages containing filename.
-alias pacf='pkgfile -sir' # <pattern>
+alias pacf='pkgfile --search --ignorecase --regex' # <pattern>
 
 pacx() {
-    local pacman_cache=/var/cache/pacman/pkg
-    sudo paccache -vrk1 -c "$pacman_cache"
-    sudo paccache -vruk0 -c "$pacman_cache"
+    local dir=/var/cache/pacman/pkg
+    sudo paccache -v --cachedir "$dir" --remove --keep 1
+    sudo paccache -v --cachedir "$dir" --remove --keep 0 --uninstalled
 }
 
 # vi:ft=sh
