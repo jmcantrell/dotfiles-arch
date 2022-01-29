@@ -8,7 +8,7 @@ sudo touch /etc/sub{uid,gid}
 sudo usermod --add-subuids 100000-165536 --add-subgids 100000-165536 "$USER"
 podman system migrate
 
-cat >"$HOME"/.profile.d/podman <<-EOF
+cat >"$HOME"/.shrc.d/podman <<-EOF
 export DOCKER_HOST=unix://\$XDG_RUNTIME_DIR/podman/podman.sock
 
 # vi:ft=sh

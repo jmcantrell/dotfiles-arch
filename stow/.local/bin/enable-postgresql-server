@@ -6,19 +6,17 @@ set -eu
 
 sudo pacman --sync --noconfirm --needed postgresql
 
-postgres=/var/lib/postgres
-data=$postgres/data
-config=$data/postgresql.conf
+data_dir=/var/lib/postgres/data
 
 # Disable copy-on-write if on a btrfs file system.
 if [[ $(stat -f -c %T /var) == btrfs ]]; then
-    sudo chattr +C "$postgres"
+    sudo chattr +C "$data_dir"
 fi
 
-sudo -u postgres -i initdb --no-locale --encoding=utf-8 --pgdata="$data"
+sudo -u postgres -i initdb --no-locale --encoding=utf-8 --pgdata="$data_dir"
 
 enable_line() {
-    sudo sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$config"
+    sudo sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$data_dir"/postgresql.conf
 }
 
 enable_line timezone utc

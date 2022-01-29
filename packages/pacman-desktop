@@ -30,14 +30,13 @@ python-adblock
 qt5-wayland
 qt5ct
 qt6-wayland
-qutebrowser
 slurp
 swappy
 sway
 swayidle
 swaylock
-transmission-cli
 transmission-gtk
+transmission-remote-gtk
 ttf-croscore
 ttf-dejavu
 ttf-liberation

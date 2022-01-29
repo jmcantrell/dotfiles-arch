@@ -18,8 +18,8 @@ alias aurup='pikaur --sync --refresh --sysupgrade'
 aurx() {
     pacx
     local dir=${XDG_CACHE_HOME:-$HOME/.cache}/pikaur/pkg
-    paccache -v --cachedir "$dir" --remove --keep 1
-    paccache -v --cachedir "$dir" --remove --keep 0 --uninstalled
+    paccache --verbose --cachedir "$dir" --remove --keep 1
+    paccache --verbose --cachedir "$dir" --remove --keep 0 --uninstalled
 }
 
 # vi:ft=sh

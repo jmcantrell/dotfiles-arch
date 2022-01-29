@@ -31,8 +31,8 @@ alias pacf='pkgfile --search --ignorecase --regex' # <pattern>
 
 pacx() {
     local dir=/var/cache/pacman/pkg
-    sudo paccache -v --cachedir "$dir" --remove --keep 1
-    sudo paccache -v --cachedir "$dir" --remove --keep 0 --uninstalled
+    sudo paccache --verbose --cachedir "$dir" --remove --keep 1
+    sudo paccache --verbose --cachedir "$dir" --remove --keep 0 --uninstalled
 }
 
 # vi:ft=sh
