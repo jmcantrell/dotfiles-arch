@@ -4,13 +4,6 @@ My configuration files and scripts for Arch Linux.
 
 ## Installation
 
-Clone this repository:
-
-```sh
-git clone git@gitlab.com:jmcantrell/dotfiles-arch.git ~/.dotfiles-arch
-cd ~/.dotfiles-arch
-```
-
 Install packages, symlink files, and configure system:
 
 ```sh
@@ -18,6 +11,8 @@ Install packages, symlink files, and configure system:
 ./scripts/stow
 ./scripts/config
 ```
+
+## Additional tasks
 
 Update repository with the latest changes:
 
