@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install and configure VirtualBox to be used as a virtual machine host.
+# Configure this system as a VirtualBox host.
 
 set -eu
 

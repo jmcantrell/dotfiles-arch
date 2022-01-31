@@ -2,18 +2,12 @@
 
 set -eu
 
-name=${1:-}
+export PATH=$PWD/stow/.local/bin:$PATH
 
-pacman_list=$PWD/packages/pacman${name:+-$name}
-aur_list=$PWD/packages/aur${name:+-$name}
+sudo pacman --sync --noconfirm --needed - <./packages/pacman
 
-if [[ -f $pacman_list ]]; then
-    sudo pacman --sync --noconfirm --needed - <"$pacman_list"
+if ! which pikaur >/dev/null; then
+    aur-install pikaur
 fi
 
-if [[ -f $aur_list ]]; then
-    if [[ ! -x /usr/bin/pikaur ]]; then
-        ./stow/.local/bin/aur-install pikaur
-    fi
-    pikaur --sync --noconfirm --needed - <"$aur_list"
-fi
+pikaur --sync --noconfirm --needed - <./packages/aur

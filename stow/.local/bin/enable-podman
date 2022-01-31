@@ -10,6 +10,4 @@ podman system migrate
 
 cat >"$HOME"/.shrc.d/podman <<-EOF
 export DOCKER_HOST=unix://\$XDG_RUNTIME_DIR/podman/podman.sock
-
-# vi:ft=sh
 EOF

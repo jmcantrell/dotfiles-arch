@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Configure localhost as a VirtualBox guest.
+# Configure this system as a VirtualBox guest.
 
 set -eu
 

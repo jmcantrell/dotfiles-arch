@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Simple AUR package builder and installer.
+# Simple AUR package installer.
 # Usage: aur-install NAME...
 
 set -eu
