@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure the nix package manager.
+
 set -eu
 
 sudo pacman --sync --noconfirm --needed nix

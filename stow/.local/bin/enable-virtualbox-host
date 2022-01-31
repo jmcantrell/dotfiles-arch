@@ -6,13 +6,13 @@ set -eu
 
 sudo pacman --sync --noconfirm --needed virtualbox virtualbox-host-modules-arch
 xargs -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
-
 sudo gpasswd --add "$USER" vboxusers
 
 vms_dir=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
 
 mkdir -p "$vms_dir"
 
+# Use this non-standard virtual machine location by default.
 vboxmanage setproperty machinefolder "$vms_dir"
 
 # Disable copy-on-write if on a btrfs file system.

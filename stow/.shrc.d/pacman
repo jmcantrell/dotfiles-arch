@@ -1,3 +1,4 @@
+# Set some default options.
 alias pacman='pacman --color=auto'
 
 # Search for packages.

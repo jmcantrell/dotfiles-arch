@@ -1,8 +1,19 @@
+# Set some default options.
 alias ip='ip -color -human'
+
+# Manage network devices.
 alias ipl='ip link'
-alias ipn='ip neigh'
+
+# Manage ARP cache.
+alias ipn='ip neighbor'
+
+# Manage ip addresses.
 alias ipa='ip address'
+
+# Manage routing table.
 alias ipr='ip route'
+
+# Monitor netlink messages.
 alias ipmon='ip -tshort monitor'
 
 # vi:ft=sh

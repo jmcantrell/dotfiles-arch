@@ -2,18 +2,22 @@
 
 set -eu
 
+# Add file system modifications.
 sudo rsync -v --archive --no-owner --no-group ./rootfs/ /
 
+# Enable ad-hoc job scheduling.
 sudo systemctl enable --now atd.service
 
+# Enable package file indexing.
 sudo systemctl enable --now pkgfile-update.timer
 sudo pkgfile --update
 
+# Enable file system indexing.
 sudo systemctl enable --now plocate-updatedb.timer
-sudo gpasswd --add "$USER" locate
 
-# Allow users in locate group to run updatedb.
+# Allow users in locate group to update locate database.
 sudo chgrp -R locate /var/lib/plocate
 sudo chmod -R g+w /var/lib/plocate
 
+# Enable ssh-agent for this user at login.
 systemctl --user enable --now ssh-agent.service

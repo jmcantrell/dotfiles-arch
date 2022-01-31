@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Install and configure nftables firewall.
+# Install and configure the nftables firewall.
 
 set -eu
 
