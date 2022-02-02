@@ -8,6 +8,7 @@ aspell-en
 astyle
 at
 atool
+audacity
 bandit
 base-devel
 bash-completion
@@ -47,6 +48,7 @@ highlight
 iftop
 imagemagick
 imv
+inkscape
 inotify-tools
 iotop
 ipcalc
@@ -55,6 +57,8 @@ iw
 jdk-openjdk
 jedi-language-server
 jq
+kdenlive
+krita
 libcaca
 libcanberra
 libjpeg-turbo
@@ -75,6 +79,7 @@ mediainfo
 mkcert
 moreutils
 mpv
+mypaint
 mypy
 namcap
 ncdu
