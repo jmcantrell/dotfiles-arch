@@ -30,10 +30,13 @@ alias pacqq='pacman --query --search --quiet' # just package names
 # Show packages containing filename.
 alias pacf='pkgfile --search --ignorecase --regex' # <pattern>
 
-pacx() {
-    local dir=/var/cache/pacman/pkg
+purge_package_cache() {
+    local dir=${1:?Missing directory}
     sudo paccache --verbose --cachedir "$dir" --remove --keep 1
     sudo paccache --verbose --cachedir "$dir" --remove --keep 0 --uninstalled
 }
+
+# Remove unused packages.
+alias pacx='purge_package_cache /var/cache/pacman/pkg'
 
 # vi:ft=sh

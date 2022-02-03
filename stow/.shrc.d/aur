@@ -15,11 +15,6 @@ alias aursh='pikaur --sync --info'
 alias aurup='pikaur --sync --refresh --sysupgrade'
 
 # Remove unused packages.
-aurx() {
-    pacx
-    local dir=${XDG_CACHE_HOME:-$HOME/.cache}/pikaur/pkg
-    paccache --verbose --cachedir "$dir" --remove --keep 1
-    paccache --verbose --cachedir "$dir" --remove --keep 0 --uninstalled
-}
+alias aurx='purge_package_cache "${XDG_CACHE_HOME:-$HOME/.cache}"/pikaur/pkg'
 
 # vi:ft=sh

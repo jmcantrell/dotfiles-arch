@@ -8,7 +8,7 @@ set -eu
 temp_dir=$(mktemp -d -t "${0##*/}".XXXXXXXXXX)
 trap 'rm -rf "$temp_dir"' INT TERM EXIT
 
-url="https://aur.archlinux.org/cgit/aur.git/snapshot"
+url=https://aur.archlinux.org/cgit/aur.git/snapshot
 
 for name in "$@"; do
     file=$name.tar.gz
