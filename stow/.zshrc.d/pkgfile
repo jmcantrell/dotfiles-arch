@@ -1,5 +1,0 @@
-if [[ -d /usr/share/doc/pkgfile ]]; then
-    . /usr/share/doc/pkgfile/command-not-found.zsh
-fi
-
-# vi:ft=zsh

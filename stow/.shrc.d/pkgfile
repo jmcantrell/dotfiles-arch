@@ -1,0 +1,5 @@
+file=/usr/share/doc/pkgfile/command-not-found.${SHELL##*/}
+[[ -r $file ]] && . "$file"
+unset file
+
+# vi:ft=zsh
