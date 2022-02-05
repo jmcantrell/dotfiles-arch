@@ -23,13 +23,6 @@ alias paco='pacman --query --deps --unrequired'
 alias pacls='pacman --query --explicit --quiet' # just package names
 alias pacll='pacman --query --explicit'         # with versions
 
-# Search installed packages.
-alias pacq='pacman --query --search'          # detailed list
-alias pacqq='pacman --query --search --quiet' # just package names
-
-# Show packages containing filename.
-alias pacf='pkgfile --search --ignorecase --regex' # <pattern>
-
 purge_package_cache() {
     local dir=${1:?Missing directory}
     sudo paccache --verbose --cachedir "$dir" --remove --keep 1

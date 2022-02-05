@@ -20,4 +20,7 @@ mullvad lan set allow
 mullvad relay set tunnel-protocol wireguard
 mullvad relay set location "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
 mullvad tunnel ipv6 set on
-mullvad tunnel wireguard key regenerate
+
+if ! mullvad tunnel wireguard key check; then
+    mullvad tunnel wireguard key regenerate
+fi

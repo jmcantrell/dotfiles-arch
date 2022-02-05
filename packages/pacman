@@ -108,6 +108,7 @@ pkgfile
 playerctl
 plocate
 postgresql
+postgrest
 prettier
 pwgen
 python-adblock
@@ -164,7 +165,6 @@ whois
 wireguard-tools
 wireplumber
 wl-clipboard
-wmctrl
 words
 wtype
 xdg-user-dirs
