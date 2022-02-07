@@ -3,7 +3,7 @@
 set -eu
 
 # Add file system modifications.
-sudo rsync -v --archive --no-owner --no-group ./rootfs/ /
+sudo rsync -v --archive --no-owner --no-group ./files/root/ /
 
 # Enable ad-hoc job scheduling.
 sudo systemctl enable --now atd.service

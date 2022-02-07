@@ -2,7 +2,7 @@
 
 set -eu
 
-export PATH=$PWD/home/.local/bin:$PATH
+export PATH=$PWD/files/home/.local/bin:$PATH
 
 sudo pacman --sync --noconfirm --needed - <./packages/pacman
 
