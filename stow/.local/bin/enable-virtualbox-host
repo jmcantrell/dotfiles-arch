@@ -8,14 +8,14 @@ sudo pacman --sync --noconfirm --needed virtualbox virtualbox-host-modules-arch
 xargs -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
 sudo gpasswd --add "$USER" vboxusers
 
-vms_dir=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
+directory=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
 
-mkdir -p "$vms_dir"
+mkdir -p "$directory"
 
 # Use this non-standard virtual machine location by default.
-vboxmanage setproperty machinefolder "$vms_dir"
+vboxmanage setproperty machinefolder "$directory"
 
 # Disable copy-on-write if on a btrfs file system.
-if [[ $(stat -f -c %T "$vms_dir") == btrfs ]]; then
-    chattr +C "$vms_dir"
+if [[ $(stat -f -c %T "$directory") == btrfs ]]; then
+    chattr +C "$directory"
 fi
