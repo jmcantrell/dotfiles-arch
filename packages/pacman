@@ -107,7 +107,6 @@ pkgfile
 playerctl
 plocate
 postgresql
-postgrest
 prettier
 pwgen
 python-adblock
