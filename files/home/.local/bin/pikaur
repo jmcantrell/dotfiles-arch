@@ -7,10 +7,4 @@
 # tools in my PATH (using pyenv, rustup, etc.), which can cause the package
 # build to fail, or, at least, not build repeatably.
 
-# This tries to decontaminate the environment by restoring PATH to the default
-# system state.
-
-unset PATH
-. /etc/profile
-
-exec pikaur "$@"
+exec with-default-path pikaur "$@"
