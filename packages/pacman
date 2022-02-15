@@ -114,6 +114,7 @@ python-black
 python-build
 python-pudb
 python-pynvim
+python-systemd
 qrencode
 qt5-wayland
 qt5ct

@@ -14,7 +14,7 @@ for name in "$@"; do
     file=$name.tar.gz
 
     curl -sL -o "$temp_dir/$file" "$url/$file"
-    tar --directory "$temp_dir" -xf "$temp_dir/$file"
+    tar xf "$temp_dir/$file" -C "$temp_dir"
 
     cd "$temp_dir/$name"
 
