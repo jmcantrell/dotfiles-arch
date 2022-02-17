@@ -119,6 +119,7 @@ qrencode
 qt5-wayland
 qt5ct
 qt6-wayland
+qutebrowser
 redis
 ripgrep
 rsync
