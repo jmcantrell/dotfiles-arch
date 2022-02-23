@@ -24,12 +24,12 @@ alias pacls='pacman --query --explicit --quiet' # just package names
 alias pacll='pacman --query --explicit'         # with versions
 
 purge_package_cache() {
-    local dir=${1:?Missing directory}
+    local dir=${1:-/var/cache/pacman/pkg}
     sudo paccache --verbose --cachedir "$dir" --remove --keep 1
     sudo paccache --verbose --cachedir "$dir" --remove --keep 0 --uninstalled
 }
 
 # Remove unused packages.
-alias pacx='purge_package_cache /var/cache/pacman/pkg'
+alias pacx=purge_package_cache
 
 # vi:ft=sh
