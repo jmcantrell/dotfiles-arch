@@ -2,12 +2,12 @@
 
 set -eu
 
-export PATH=$PWD/files/home/.local/bin:$PATH
+xargs -I{} gpg --locate-keys {} <./packages/keys
 
 sudo pacman --sync --noconfirm --needed - <./packages/pacman
 
-if ! which pikaur >/dev/null; then
-    aur-install pikaur
+if [[ ! -x /usr/bin/pikaur ]]; then
+    ./files/home/.local/bin/aur-install pikaur
 fi
 
 pikaur --sync --noconfirm --needed - <./packages/aur
