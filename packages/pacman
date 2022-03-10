@@ -97,6 +97,7 @@ pamixer
 pandoc
 parallel
 pass
+pass-otp
 pavucontrol
 perl-image-exiftool
 pipewire
@@ -114,6 +115,7 @@ python-build
 python-pudb
 python-pynvim
 python-systemd
+python-tldextract
 qrencode
 qt5-wayland
 qt5ct
@@ -167,6 +169,8 @@ wireplumber
 wl-clipboard
 words
 wtype
+xdg-desktop-portal
+xdg-desktop-portal-wlr
 xdg-user-dirs
 xmlstarlet
 xorg-xwayland
