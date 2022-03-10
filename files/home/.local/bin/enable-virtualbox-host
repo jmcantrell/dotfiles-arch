@@ -16,6 +16,6 @@ mkdir -p "$directory"
 vboxmanage setproperty machinefolder "$directory"
 
 # Disable copy-on-write if on a btrfs file system.
-if [[ $(stat -f -c %T "$directory") == btrfs ]]; then
+if [[ $(stat --file-system --format %T "$directory") == btrfs ]]; then
     chattr +C "$directory"
 fi
