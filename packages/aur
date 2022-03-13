@@ -5,7 +5,7 @@ git-archive-all
 gron-bin
 heroku-cli-bin
 jo
-ncspot-bin
+ncspot-git
 nixfmt
 pgformatter
 qutebrowser-git
