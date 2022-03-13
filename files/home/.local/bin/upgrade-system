@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -eu
+
+sudo pacman -Syu --noconfirm
+pikaur -Syu --aur --devel --keepbuilddeps --noconfirm --needed
