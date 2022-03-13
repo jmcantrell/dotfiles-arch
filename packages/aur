@@ -5,10 +5,10 @@ git-archive-all
 gron-bin
 heroku-cli-bin
 jo
-mpv-mpris
 ncspot-bin
 nixfmt
 pgformatter
+qutebrowser-git
 ranger-git
 swaystatus-git
 tor-browser

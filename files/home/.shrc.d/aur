@@ -12,7 +12,7 @@ alias auri='pikaur --sync'
 alias aursh='pikaur --sync --info'
 
 # Upgrade installed packages.
-alias aurup='pikaur --sync --refresh --sysupgrade'
+alias aurup='pikaur --sync --refresh --sysupgrade --aur --devel --keepbuilddeps --needed'
 
 # Remove unused packages.
 alias aurx='purge_package_cache "${XDG_CACHE_HOME:-$HOME/.cache}"/pikaur/pkg'

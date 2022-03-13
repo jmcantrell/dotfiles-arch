@@ -76,6 +76,7 @@ mediainfo
 mkcert
 moreutils
 mpv
+mpv-mpris
 mypaint
 mypy
 namcap
@@ -116,7 +117,6 @@ python-systemd
 python-tldextract
 qrencode
 qt5ct
-qutebrowser
 redis
 ripgrep
 rsync
