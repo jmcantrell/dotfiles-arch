@@ -5,6 +5,8 @@ git-archive-all
 gron-bin
 heroku-cli-bin
 jo
+lua-format
+luacheck
 ncspot-git
 nixfmt
 pgformatter
