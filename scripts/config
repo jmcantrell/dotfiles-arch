@@ -21,7 +21,7 @@ sudo chmod -R g+w /var/lib/plocate
 
 # Only enable power saving if a battery exists.
 if [[ -e /sys/class/power_supply/BAT0 ]]; then
-	systemctl enable tlp.service
+    systemctl enable tlp.service
 fi
 
 # Enable ssh-agent for this user at login.

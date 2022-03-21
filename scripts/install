@@ -7,7 +7,7 @@ xargs -I{} gpg --locate-keys {} <./packages/keys
 sudo pacman --sync --noconfirm --needed - <./packages/pacman
 
 if [[ ! -x /usr/bin/pikaur ]]; then
-	./files/home/.local/bin/aur-install pikaur
+    ./files/home/.local/bin/aur-install pikaur
 fi
 
 pikaur --sync --noconfirm --needed - <./packages/aur
