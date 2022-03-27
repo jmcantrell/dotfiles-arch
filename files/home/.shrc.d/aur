@@ -3,7 +3,7 @@
 alias pikaur='pikaur --noedit --nodiff'
 
 # Search for packages.
-alias aurs='pikaur --sync --search'
+alias aurs='pikaur --sync --aur --search'
 
 # Install packages.
 alias auri='pikaur --sync'
