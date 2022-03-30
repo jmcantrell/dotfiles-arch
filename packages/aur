@@ -8,6 +8,7 @@ jo
 lua-format
 luacheck
 ncspot-git
+ngrok
 nixfmt
 pgformatter
 qutebrowser-git
