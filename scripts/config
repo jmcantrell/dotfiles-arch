@@ -5,6 +5,9 @@ set -eu
 # Add file system modifications.
 sudo rsync -v --archive --no-owner --no-group ./files/root/ /
 
+# Enable old kernel module cleanup.
+sudo systemctl enable --now linux-modules-cleanup.service
+
 # Enable ad-hoc job scheduling.
 sudo systemctl enable --now atd.service
 
