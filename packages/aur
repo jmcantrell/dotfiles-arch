@@ -4,6 +4,7 @@ git-archive-all
 jo
 lua-format
 luacheck
+ncspot-bin
 ngrok
 nixfmt
 pgformatter-git
