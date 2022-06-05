@@ -1,14 +1,12 @@
 as-tree-bin
 btrfs-snapshots-git
 git-archive-all
-heroku-cli-bin
 jo
 lua-format
 luacheck
-ncspot-git
 ngrok
 nixfmt
-pgformatter
+pgformatter-git
 qutebrowser-git
 ranger-git
 swaystatus-git
