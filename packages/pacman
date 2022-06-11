@@ -118,7 +118,6 @@ python-systemd
 python-tldextract
 qrencode
 qt5ct
-ranger
 redis
 ripgrep
 rsync
