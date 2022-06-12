@@ -8,6 +8,7 @@ ncspot-bin
 ngrok
 nixfmt
 pgformatter-git
+qt5-webengine-widevine
 qutebrowser-git
 ranger-git
 swaystatus-git
