@@ -4,10 +4,7 @@
 
 set -eu
 
-: \
-    "$MULLVAD_ACCOUNT" \
-    "$MULLVAD_COUNTRY" \
-    "$MULLVAD_CITY"
+: "$MULLVAD_ACCOUNT" "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
 
 curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
 pikaur --sync --noconfirm --needed mullvad-vpn-bin
