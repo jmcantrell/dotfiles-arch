@@ -8,9 +8,9 @@ sudo pacman --sync --noconfirm --needed nix
 sudo systemctl enable --now nix-daemon.service
 
 sudo gpasswd --add "$USER" nix-users
-newgrp nix-users
 
+newgrp nix-users <<EOF
 nix-channel --add https://nixos.org/channels/nixpkgs-unstable
 nix-channel --update
-
 nix-env -iA nixpkgs.nixFlakes
+EOF
