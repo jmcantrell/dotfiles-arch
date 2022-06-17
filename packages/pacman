@@ -140,7 +140,6 @@ texlive-bin
 texlive-core
 texlive-latexextra
 tldr
-tlp
 tmux
 transmission-cli
 transmission-gtk
