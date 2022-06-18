@@ -8,6 +8,9 @@ sudo rsync -v --archive --no-owner --no-group ./files/root/ /
 # Enable old kernel module cleanup.
 sudo systemctl enable --now linux-modules-cleanup.service
 
+# Enable firewall.
+sudo systemctl enable --now nftables.service
+
 # Enable ad-hoc job scheduling.
 sudo systemctl enable --now atd.service
 
