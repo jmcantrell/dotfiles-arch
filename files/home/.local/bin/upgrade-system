@@ -3,4 +3,4 @@
 set -eu
 
 sudo pacman -Syu --noconfirm
-pikaur -Syu --aur --devel --keepbuilddeps --noconfirm --needed
+pikaur -Syu --aur --devel --keepbuilddeps --noconfirm
