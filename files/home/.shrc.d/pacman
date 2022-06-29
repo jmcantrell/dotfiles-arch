@@ -13,6 +13,9 @@ alias pacrm='sudo pacman --remove --recursive'
 # Show package information.
 alias pacsh='pacman --sync --info'
 
+# Show packages that have updates.
+alias pacsup='sudo pacman --sync --refresh; pacman --query --upgrades'
+
 # Upgrade installed packages.
 alias pacup='sudo pacman --sync --refresh --sysupgrade'
 

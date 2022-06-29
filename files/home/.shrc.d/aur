@@ -1,18 +1,14 @@
-# Don't prompt for editing or viewing package diffs.
-# WARNING: This is a security risk. PKGBUILDs should be inspected first.
-alias pikaur='pikaur --noedit --nodiff'
-
 # Search for packages.
 alias aurs='pikaur --sync --aur --search'
 
 # Install packages.
-alias auri='pikaur --sync'
+alias auri='pikaur --sync --no{edit,diff}'
 
 # Show package information.
 alias aursh='pikaur --sync --info'
 
 # Upgrade installed packages.
-alias aurup='pikaur --sync --refresh --sysupgrade --aur --devel --keepbuilddeps --needed'
+alias aurup='pikaur --sync --refresh --sysupgrade --aur --devel --keepbuilddeps --needed --no{edit,diff}'
 
 # Remove unused packages.
 alias aurx='purge_package_cache "${XDG_CACHE_HOME:-$HOME/.cache}"/pikaur/pkg'

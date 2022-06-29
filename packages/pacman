@@ -5,16 +5,12 @@ aria2
 aspell-en
 astyle
 at
-atool
-audacity
 bandit
 base-devel
 bash-completion
 bat
 bemenu-wayland
-blender
 brightnessctl
-calibre
 catdoc
 clang
 ctags
@@ -27,13 +23,10 @@ eslint
 expac
 fd
 ffmpeg
-firefox
 flake8
 gcr
 gdb
 gifsicle
-gimp
-gimp-help-en
 git
 glances
 gnome-keyring
@@ -44,7 +37,6 @@ highlight
 iftop
 imagemagick
 imv
-inkscape
 inotify-tools
 iotop
 ipcalc
@@ -54,7 +46,6 @@ jdk-openjdk
 jedi-language-server
 jq
 kernel-modules-hook
-krita
 libcaca
 libcanberra
 libjpeg-turbo
@@ -76,7 +67,6 @@ mkcert
 moreutils
 mpv
 mpv-mpris
-mypaint
 mypy
 namcap
 ncdu
@@ -123,7 +113,6 @@ rsync
 seahorse
 shellcheck
 shfmt
-shotcut
 slurp
 socat
 sox
@@ -141,8 +130,6 @@ texlive-core
 texlive-latexextra
 tldr
 tmux
-transmission-cli
-transmission-gtk
 trash-cli
 tree
 ttf-croscore
@@ -178,6 +165,7 @@ zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
 zenity
+zig
 zip
 zlib
 zsh
