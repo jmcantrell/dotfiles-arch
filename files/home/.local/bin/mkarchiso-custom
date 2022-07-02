@@ -2,27 +2,30 @@
 
 set -eu
 
-output_dir=$PWD
-
 temp_dir=$(mktemp -d -t "${0##*/}.XXXXXXXXXX")
 printf -v cleanup "sudo rm -rf %q" "$temp_dir"
 trap "$cleanup" INT TERM EXIT
 
-build_dir=$temp_dir/build
+out_dir=$temp_dir/out
+work_dir=$temp_dir/work
 profile_dir=$temp_dir/profile
 
 cp -r /usr/share/archiso/configs/releng "$profile_dir"
 
-cd -- "$profile_dir"
+sed -i \
+    -e "/^iso_name=/s/\(['\"]\)$/-custom\1/" \
+    -e "/^iso_publisher=/s/=.*/=\"Jeremy Cantrell <jmcantrell@gmail.com>\"/" \
+    -e "/^iso_application=/s/\(['\"]\)$/ (Customized)\"/" \
+    "$profile_dir"/profiledef.sh
 
-sed -i "/^DHCP=/a MulticastDNS=yes" ./airootfs/etc/systemd/network/*.network
+sed -i "/^DHCP=/a MulticastDNS=yes" "$profile_dir"/airootfs/etc/systemd/network/*.network
 
 declare -A file_permissions=()
 
 if [[ -d /var/lib/iwd ]]; then
     file_permissions["/var/lib/iwd"]="0:0:700"
-    mkdir -p ./airootfs/var/lib
-    sudo cp -ra /var/lib/iwd ./airootfs/var/lib
+    mkdir -p "$profile_dir"/airootfs/var/lib
+    sudo cp -ra /var/lib/iwd "$profile_dir"/airootfs/var/lib
 fi
 
 if [[ -f ~/.ssh/authorized_keys ]]; then
@@ -30,12 +33,14 @@ if [[ -f ~/.ssh/authorized_keys ]]; then
         ["/root/.ssh"]="0:0:700"
         ["/root/.ssh/authorized_keys"]="0:0:600"
     )
-    mkdir -p ./airootfs/root/.ssh
-    cp -a ~/.ssh/authorized_keys ./airootfs/root/.ssh
+    mkdir -p "$profile_dir"/airootfs/root/.ssh
+    cp -a ~/.ssh/authorized_keys "$profile_dir"/airootfs/root/.ssh
 fi
 
 for path in "${!file_permissions[@]}"; do
-    sed -i "/^file_permissions=/a \ \ [\"$path\"]=\"${file_permissions[$path]}\"" ./profiledef.sh
+    sed -i "/^file_permissions=/a \ \ [\"$path\"]=\"${file_permissions[$path]}\"" "$profile_dir"/profiledef.sh
 done
 
-sudo mkarchiso -v -w "$build_dir" -o "$output_dir" "$profile_dir"
+sudo mkarchiso -v -w "$work_dir" -o "$out_dir" "$profile_dir"
+sudo chown -R "$USER:$USER" "$out_dir"
+mv "$out_dir"/*.iso .

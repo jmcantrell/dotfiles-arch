@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+
+output_dir=$PWD
+
+build_dir=$(mktemp -d -t "${0##*/}.XXXXXXXXXX")
+printf -v cleanup "sudo rm -rf %q" "$build_dir"
+trap "$cleanup" INT TERM EXIT
+
+sudo mkarchiso -v -w "$build_dir" -o "$output_dir" /usr/share/archiso/configs/releng
