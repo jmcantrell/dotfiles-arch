@@ -1,6 +1,7 @@
 acpi
 alacritty
 alsa-utils
+archiso
 aria2
 aspell-en
 astyle
@@ -18,6 +19,7 @@ curl
 dhcping
 direnv
 dnsmasq
+edk2-ovmf
 entr
 eslint
 expac
@@ -105,6 +107,9 @@ python-pudb
 python-pynvim
 python-systemd
 python-tldextract
+qemu-desktop
+qemu-img
+qemu-system
 qrencode
 qt5ct
 redis
