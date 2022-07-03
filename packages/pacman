@@ -99,6 +99,7 @@ playerctl
 plocate
 postgresql
 prettier
+pv
 pwgen
 python-adblock
 python-black
@@ -109,7 +110,7 @@ python-systemd
 python-tldextract
 qemu-desktop
 qemu-img
-qemu-system
+qemu-system-x86
 qrencode
 qt5ct
 redis
