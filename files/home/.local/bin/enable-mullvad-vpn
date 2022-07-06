@@ -19,5 +19,5 @@ mullvad relay set tunnel-protocol wireguard
 mullvad tunnel ipv6 set on
 
 if ! mullvad tunnel wireguard key check; then
-	mullvad tunnel wireguard key regenerate
+    mullvad tunnel wireguard key regenerate
 fi

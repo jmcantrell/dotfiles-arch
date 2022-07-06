@@ -13,32 +13,32 @@ profile_dir=$temp_dir/profile
 cp -r /usr/share/archiso/configs/releng "$profile_dir"
 
 sed -i \
-	-e "/^iso_name=/s/\(['\"]\)$/-custom\1/" \
-	-e "/^iso_publisher=/s/=.*/=\"Jeremy Cantrell <jmcantrell@gmail.com>\"/" \
-	-e "/^iso_application=/s/\(['\"]\)$/ (Customized)\"/" \
-	"$profile_dir"/profiledef.sh
+    -e "/^iso_name=/s/\(['\"]\)$/-custom\1/" \
+    -e "/^iso_publisher=/s/=.*/=\"Jeremy Cantrell <jmcantrell@gmail.com>\"/" \
+    -e "/^iso_application=/s/\(['\"]\)$/ (Customized)\"/" \
+    "$profile_dir"/profiledef.sh
 
 sed -i "/^DHCP=/a MulticastDNS=yes" "$profile_dir"/airootfs/etc/systemd/network/*.network
 
 declare -A file_permissions=()
 
 if [[ -d /var/lib/iwd ]]; then
-	file_permissions["/var/lib/iwd"]="0:0:700"
-	mkdir -p "$profile_dir"/airootfs/var/lib
-	sudo cp -ra /var/lib/iwd "$profile_dir"/airootfs/var/lib
+    file_permissions["/var/lib/iwd"]="0:0:700"
+    mkdir -p "$profile_dir"/airootfs/var/lib
+    sudo cp -ra /var/lib/iwd "$profile_dir"/airootfs/var/lib
 fi
 
 if [[ -f ~/.ssh/authorized_keys ]]; then
-	file_permissions+=(
-		["/root/.ssh"]="0:0:700"
-		["/root/.ssh/authorized_keys"]="0:0:600"
-	)
-	mkdir -p "$profile_dir"/airootfs/root/.ssh
-	cp -a ~/.ssh/authorized_keys "$profile_dir"/airootfs/root/.ssh
+    file_permissions+=(
+        ["/root/.ssh"]="0:0:700"
+        ["/root/.ssh/authorized_keys"]="0:0:600"
+    )
+    mkdir -p "$profile_dir"/airootfs/root/.ssh
+    cp -a ~/.ssh/authorized_keys "$profile_dir"/airootfs/root/.ssh
 fi
 
 for path in "${!file_permissions[@]}"; do
-	sed -i "/^file_permissions=/a \ \ [\"$path\"]=\"${file_permissions[$path]}\"" "$profile_dir"/profiledef.sh
+    sed -i "/^file_permissions=/a \ \ [\"$path\"]=\"${file_permissions[$path]}\"" "$profile_dir"/profiledef.sh
 done
 
 sudo mkarchiso -v -w "$work_dir" -o "$out_dir" "$profile_dir"
