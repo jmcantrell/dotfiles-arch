@@ -111,6 +111,7 @@ qemu-desktop
 qemu-img
 qemu-system-x86
 qrencode
+qt5-wayland
 qt5ct
 redis
 ripgrep
@@ -125,6 +126,7 @@ sshfs
 stow
 swappy
 sway
+swaybg
 swayidle
 swaylock
 sysstat
