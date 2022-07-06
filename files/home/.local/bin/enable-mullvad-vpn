@@ -10,7 +10,7 @@ curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
 pikaur --sync --noconfirm --needed mullvad-vpn-bin
 sudo systemctl enable --now mullvad-daemon.service
 
-mullvad account set "$MULLVAD_ACCOUNT"
+mullvad account login "$MULLVAD_ACCOUNT"
 mullvad relay set location "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
 
 mullvad auto-connect set on
