@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Install and configure the nftables firewall.
-
-set -eu
-
-sudo pacman --sync --noconfirm --needed nftables
-sudo systemctl enable --now nftables.service
