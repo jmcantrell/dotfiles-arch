@@ -12,7 +12,6 @@ sudo systemctl enable --now mullvad-daemon.service
 
 mullvad account login "$MULLVAD_ACCOUNT"
 mullvad relay set location "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
-
 mullvad auto-connect set on
 mullvad lan set allow
 mullvad relay set tunnel-protocol wireguard
