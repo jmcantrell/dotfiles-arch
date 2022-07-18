@@ -125,6 +125,7 @@ socat
 sox
 sshfs
 stow
+stunnel
 swappy
 sway
 swaybg
@@ -138,6 +139,7 @@ texlive-core
 texlive-latexextra
 tldr
 tmux
+traceroute
 trash-cli
 tree
 ttf-croscore

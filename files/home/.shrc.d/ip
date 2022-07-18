@@ -1,5 +1,5 @@
 # Set some default options.
-alias ip='ip -color -human'
+alias ip='ip -color=auto -human'
 
 # Manage network devices.
 alias ipl='ip link'
