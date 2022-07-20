@@ -1,8 +1,10 @@
 as-tree-bin
 atool-git
 btrfs-snapshots-git
+flyctl-bin
 git-archive-all
 glances-git
+heroku-cli-bin
 jo
 lua-format
 luacheck
