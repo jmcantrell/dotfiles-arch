@@ -59,6 +59,7 @@ lostfiles
 lshw
 lsof
 lynx
+magic-wormhole
 mako
 man-db
 man-pages
@@ -120,6 +121,7 @@ rsync
 seahorse
 shellcheck
 shfmt
+sipcalc
 slurp
 socat
 sox
@@ -140,6 +142,7 @@ texlive-latexextra
 tldr
 tmux
 traceroute
+transmission-gtk
 trash-cli
 tree
 ttf-croscore
