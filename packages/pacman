@@ -70,6 +70,7 @@ mkcert
 moreutils
 mpv
 mpv-mpris
+mtr
 mypy
 namcap
 ncdu
@@ -115,6 +116,8 @@ qemu-system-x86
 qrencode
 qt5-wayland
 qt5ct
+qt6-wayland
+qt6ct
 redis
 ripgrep
 rsync
