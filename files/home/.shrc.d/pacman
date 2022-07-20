@@ -14,10 +14,10 @@ alias pacrm='sudo pacman --remove --recursive'
 alias pacsh='pacman --sync --info'
 
 # Show packages that have updates.
-alias pacsup='sudo pacman --sync --refresh; pacman --query --upgrades'
+alias pacsup='sudo pacman --sync --refresh && pacman --query --upgrades'
 
 # Upgrade installed packages.
-alias pacup='sudo pacman --sync --refresh --sysupgrade'
+alias pacup='sudo pacman --sync --refresh archlinux-keyring && sudo pacman --sync --sysupgrade'
 
 # Show unrequired packages.
 alias paco='pacman --query --deps --unrequired'

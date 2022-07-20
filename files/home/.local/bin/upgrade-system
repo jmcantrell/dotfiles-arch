@@ -2,5 +2,5 @@
 
 set -eu
 
-sudo pacman -Syu --noconfirm
+sudo pacman -Sy archlinux-keyring --noconfirm && sudo pacman -Su --noconfirm
 pikaur -Syu --aur --devel --keepbuilddeps --noconfirm
