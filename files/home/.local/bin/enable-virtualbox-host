@@ -5,8 +5,6 @@
 set -eu
 
 sudo pacman --sync --noconfirm --needed virtualbox virtualbox-host-modules-arch
-xargs -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
-sudo gpasswd --add "$USER" vboxusers
 
 directory=${XDG_DATA_HOME:-$HOME/.local/share}/virtualbox
 
@@ -19,3 +17,9 @@ vboxmanage setproperty machinefolder "$directory"
 if [[ $(stat --file-system --format %T "$directory") == btrfs ]]; then
     chattr +C "$directory"
 fi
+
+# Load kernel modules for this boot.
+xargs -I{} sudo modprobe {} </usr/lib/modules-load.d/virtualbox-host-modules-arch.conf
+
+# Allow this user to manage VMs.
+sudo gpasswd --add "$USER" vboxusers
