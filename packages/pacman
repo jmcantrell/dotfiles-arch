@@ -21,6 +21,8 @@ curl
 dhcping
 direnv
 dnsmasq
+docker
+docker-compose
 edk2-ovmf
 entr
 eslint
