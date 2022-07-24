@@ -2,7 +2,7 @@
 
 set -eu
 
-# Ensure that the /etc/skel files don't interfere with stow's symlinks.
+# Ensure that certain /etc/skel files don't interfere with stow's symlinks.
 rm -f ~/.bashrc ~/.bash_profile ~/.bash_logout
 
 stow --no-folding --dir ./files --target ~ --restow home

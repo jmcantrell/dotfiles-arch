@@ -9,8 +9,6 @@ die() {
 
 [[ $EUID == 0 ]] || exec sudo -- "$0" "$@"
 
-interface=wg-mullvad
-
 country=${1:-}
 city=${2:-}
 
@@ -26,6 +24,7 @@ else
     jq_filter='.countries | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'
 fi
 
+interface=wg-mullvad
 config_dir=/etc/wireguard
 config_file=$config_dir/$interface.conf
 
@@ -33,6 +32,8 @@ relay_hostname=$(
     curl -LsS https://api.mullvad.net/public/relays/wireguard/v1/ |
         jq -r "${jq_options[@]}" "$jq_filter" | shuf -n1
 )
+
+[[ -n $relay_hostname ]] || die "no relays found"
 
 relay_config_file=$config_dir/mullvad-${relay_hostname%-wireguard}.conf
 
