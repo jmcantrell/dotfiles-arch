@@ -6,17 +6,12 @@ set -eu
 
 : "$MULLVAD_ACCOUNT" "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
 
-curl -Ls https://mullvad.net/media/mullvad-code-signing.asc | gpg --import
-pikaur --sync --noconfirm --needed mullvad-vpn-bin
-sudo systemctl enable --now mullvad-daemon.service
+script_file=$(mktemp -t "${0##*/}.XXXXXXXXXX")
+printf -v cleanup "rm -f %q" "$script_file"
+trap "$cleanup" INT TERM EXIT
 
-mullvad account login "$MULLVAD_ACCOUNT"
-mullvad relay set location "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
-mullvad auto-connect set on
-mullvad lan set allow
-mullvad relay set tunnel-protocol wireguard
-mullvad tunnel ipv6 set on
+curl -sSL -o "$script_file" https://mullvad.net/media/files/mullvad-wg.sh
+chmod +x "$script_file"
+echo "$MULLVAD_ACCOUNT" | "$script_file"
 
-if ! mullvad tunnel wireguard key check; then
-    mullvad tunnel wireguard key regenerate
-fi
+sudo systemctl enable --now wg-quick@wg-mullvad.service

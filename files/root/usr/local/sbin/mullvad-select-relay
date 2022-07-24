@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+set -eu
+
+die() {
+    printf "%s: line %s: %s\n" "$0" "${BASH_LINENO[0]}" "$1" >&2
+    exit "${2:-1}"
+}
+
+[[ $EUID == 0 ]] || exec sudo -- "$0" "$@"
+
+interface=wg-mullvad
+
+country=${1:-}
+city=${2:-}
+
+declare -a jq_options=()
+
+if [[ -n $country && -n $city ]]; then
+    jq_options=(--arg country "$country" --arg city "$city")
+    jq_filter='.countries | map(select(.code == $country)) | first | .cities | map(select(.code == $city)) | first | .relays | map(.hostname) | .[]'
+elif [[ -n $country ]]; then
+    jq_options=(--arg country "$country")
+    jq_filter='.countries | map(select(.code == $country)) | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'
+else
+    jq_filter='.countries | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'
+fi
+
+config_dir=/etc/wireguard
+config_file=$config_dir/$interface.conf
+
+relay_hostname=$(
+    curl -LsS https://api.mullvad.net/public/relays/wireguard/v1/ |
+        jq -r "${jq_options[@]}" "$jq_filter" | shuf -n1
+)
+
+relay_config_file=$config_dir/mullvad-${relay_hostname%-wireguard}.conf
+
+[[ -f $relay_config_file ]] || die "config file does not exist: $relay_config_file"
+
+ln -svfn "$relay_config_file" "$config_file"
