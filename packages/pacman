@@ -18,6 +18,7 @@ catdoc
 clang
 ctags
 curl
+devtools
 dhcping
 direnv
 dnsmasq
