@@ -3,15 +3,11 @@ atool-git
 btrfs-snapshots-git
 flyctl-bin
 git-archive-all
-glances-git
 heroku-cli-bin
-jo
 lua-format
-luacheck
 ncspot-bin
 ngrok
 nixfmt
-pgformatter-git
 qt5-webengine-widevine
 qutebrowser-git
 ranger-git
