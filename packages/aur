@@ -8,8 +8,7 @@ lua-format
 ncspot-bin
 ngrok
 nixfmt
-qt5-webengine-widevine
-qutebrowser-git
+qutebrowser-qt6-git
 ranger-git
 rr
 swaystatus-git
