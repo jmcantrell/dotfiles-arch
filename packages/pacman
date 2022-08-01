@@ -34,6 +34,8 @@ flake8
 gcr
 gdb
 gifsicle
+gimp
+gimp-help-en
 git
 glances
 gnome-keyring
