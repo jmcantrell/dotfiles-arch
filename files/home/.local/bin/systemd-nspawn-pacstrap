@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Initialize an Arch systemd-nspawn container.
+# Usage: systemd-nspawn-pacstrap [package...]
+
+set -eu
+
+dir=$1
+shift
+
+mkdir -p "$dir"
+pacstrap -c "$dir" base "$@"
+
+rm "$dir"/etc/machine-id
+
+rm "$dir"/{,usr/share/factory}/etc/securetty
+sed -i '\:\s/etc/securetty$:s/^#*/#/' "$dir"/usr/lib/tmpfiles.d/arch.conf
+
+systemd-nspawn -D "$dir" systemctl enable systemd-{networkd,resolved}.service
+
+if [[ -v ROOT_PASSWORD ]]; then
+    echo "root:$ROOT_PASSWORD" | systemd-nspawn -D "$dir" --console=pipe chpasswd
+fi
