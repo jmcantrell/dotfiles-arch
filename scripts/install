@@ -2,7 +2,7 @@
 
 set -eu
 
-xargs -I{} gpg --locate-keys {} <./packages/keys
+xargs -r gpg --locate-keys <./packages/keys
 
 sudo pacman --sync --noconfirm --needed - <./packages/pacman
 
