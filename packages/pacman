@@ -14,6 +14,7 @@ bemenu-wayland
 bind
 brightnessctl
 btop
+cabal-install
 calibre
 catdoc
 clang
@@ -34,6 +35,7 @@ ffmpeg
 flake8
 gcr
 gdb
+ghc
 gifsicle
 gimp
 gimp-help-en
@@ -44,6 +46,7 @@ gnu-netcat
 graphicsmagick
 grim
 gron
+haskell-language-server
 highlight
 iftop
 imagemagick
@@ -92,9 +95,11 @@ newsboat
 nftables
 ngrep
 nim
+nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 odt2txt
 openssl
 optipng
@@ -123,6 +128,7 @@ pwgen
 python-adblock
 python-black
 python-build
+python-pip
 python-pudb
 python-pynvim
 python-systemd
@@ -135,6 +141,7 @@ qt5-wayland
 qt5ct
 qt6-wayland
 qt6ct
+racket
 redis
 ripgrep
 rsync
@@ -148,6 +155,7 @@ slurp
 socat
 sox
 sshfs
+stack
 stow
 stunnel
 swappy
