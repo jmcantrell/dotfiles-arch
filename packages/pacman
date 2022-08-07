@@ -68,6 +68,7 @@ logrotate
 lostfiles
 lshw
 lsof
+lua
 luacheck
 lynx
 magic-wormhole
@@ -90,6 +91,7 @@ net-tools
 newsboat
 nftables
 ngrep
+nim
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -136,6 +138,8 @@ qt6ct
 redis
 ripgrep
 rsync
+ruby
+rust
 seahorse
 shellcheck
 shfmt
