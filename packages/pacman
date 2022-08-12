@@ -18,6 +18,7 @@ btop
 cabal-install
 calibre
 catdoc
+ccache
 clang
 ctags
 curl
@@ -113,8 +114,10 @@ parallel
 pass
 pass-otp
 pavucontrol
+pbzip2
 perl-image-exiftool
 pgformatter
+pigz
 pipewire
 pipewire-alsa
 pipewire-pulse
