@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Execute an ad hoc script in a systemd-nspawn container.
+# Usage: systemd-nspawn-script DIRECTORY SCRIPT [ARGUMENT...]
+
+set -eu
+
+((EUID == 0)) || exec sudo -- "$0" "$@"
+
+dir=$1
+script=$2
+shift 2
+
+temp_script=$(mktemp -p "$dir" -t script.XXXXXXXXXX)
+printf -v cleanup "rm -vf %q" "$temp_script"
+trap "$cleanup" INT TERM EXIT
+
+cp -v "$script" "$temp_script"
+chmod +x "$temp_script"
+
+exec systemd-nspawn --directory="$dir" "/${temp_script##*/}" "$@"
