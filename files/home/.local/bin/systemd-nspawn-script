@@ -18,4 +18,4 @@ trap "$cleanup" INT TERM EXIT
 cp -v "$script" "$temp_script"
 chmod +x "$temp_script"
 
-exec systemd-nspawn --directory="$dir" "/${temp_script##*/}" "$@"
+systemd-nspawn --directory="$dir" "/${temp_script##*/}" "$@"
