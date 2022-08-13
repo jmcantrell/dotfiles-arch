@@ -5,20 +5,23 @@
 
 set -eu
 
+(( EUID == 0 )) || exec sudo -- "$0" "$@"
+
 dir=$1
 shift
 
 mkdir -p "$dir"
 pacstrap -c "$dir" base "$@"
 
-rm "$dir"/etc/machine-id
+systemd-nspawn -D "$dir" --console=pipe bash -s <<-EOF
+set -eu
 
-# Disable tty security to allow login.
-rm "$dir"/{,usr/share/factory}/etc/securetty
-sed -i '\:\s/etc/securetty$:s/^#*/#/' "$dir"/usr/lib/tmpfiles.d/arch.conf
+rm -f /{,usr/share/factory/}etc/securetty
+sed -i '\:\s/etc/securetty$:s/^#*/#/' /usr/lib/tmpfiles.d/arch.conf
 
-systemd-nspawn -D "$dir" systemctl enable systemd-{networkd,resolved}.service
+systemctl enable systemd-{networkd,resolved}.service
 
-if [[ -v ROOT_PASSWORD ]]; then
-    echo "root:$ROOT_PASSWORD" | systemd-nspawn -D "$dir" --console=pipe chpasswd
-fi
+echo "root:hunter2" | chpasswd
+
+ln -vsnf /usr/share/zoneinfo/UTC /etc/localtime
+EOF
