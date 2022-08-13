@@ -2,7 +2,10 @@
 
 set -eu
 
+((EUID == 0)) || exec sudo -- "$0" "$@"
+
 pacman --sync --noconfirm --needed postgresql
+systemctl enable postgresql.service
 
 data_dir=/var/lib/postgres/data
 
@@ -11,8 +14,6 @@ if [[ $(stat -f -c %T "$data_dir") == btrfs ]]; then
 fi
 
 su postgres -c "initdb --no-locale --encoding=utf-8 --pwfile=<(echo postgres) --data-checksums --pgdata=${data_dir@Q}"
-
-systemctl enable postgresql.service
 
 set_config() {
     sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$data_dir"/postgresql.conf
