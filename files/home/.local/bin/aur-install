@@ -14,7 +14,7 @@ url=https://aur.archlinux.org/cgit/aur.git/snapshot
 for name in "$@"; do
     file=$name.tar.gz
     curl -sL -o "$temp_dir/$file" "$url/$file"
-    tar xf "$temp_dir/$file" -C "$temp_dir"
+    tar -xf "$temp_dir/$file" -C "$temp_dir"
 
     cd "$temp_dir/$name"
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Initialize an Arch systemd-nspawn container.
-# Usage: systemd-nspawn-pacstrap [package...]
+# Usage: systemd-nspawn-pacstrap [PACKAGE...]
 
 set -eu
 
@@ -13,6 +13,7 @@ pacstrap -c "$dir" base "$@"
 
 rm "$dir"/etc/machine-id
 
+# Disable tty security to allow login.
 rm "$dir"/{,usr/share/factory}/etc/securetty
 sed -i '\:\s/etc/securetty$:s/^#*/#/' "$dir"/usr/lib/tmpfiles.d/arch.conf
 
