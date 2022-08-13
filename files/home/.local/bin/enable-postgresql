@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -eu
+
+pacman --sync --noconfirm --needed postgresql
+
+data_dir=/var/lib/postgres/data
+
+if [[ $(stat -f -c %T "$data_dir") == btrfs ]]; then
+    chattr +C "$data_dir"
+fi
+
+su postgres -c "initdb --no-locale --encoding=utf-8 --pwfile=<(echo postgres) --data-checksums --pgdata=${data_dir@Q}"
+
+systemctl enable postgresql.service
+
+set_config() {
+    sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$data_dir"/postgresql.conf
+}
+
+set_config timezone utc
+set_config listen_addresses "'*'"
+set_config log_statement all
+set_config synchronous_commit off
+set_config stats_temp_directory "'/run/postgresql'"
+
+cat >>"$data_dir"/pg_hba.conf <<-EOF
+# Allow all remote connections.
+host  all  all  0.0.0.0/0  password
+host  all  all  ::0/0      password
+EOF
