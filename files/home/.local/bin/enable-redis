@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -eu
+
+((EUID == 0)) || exec sudo -- "$0" "$@"
+
+pacman --sync --noconfirm --needed redis
+systemctl enable redis.service
+
+echo "vm.overcommit_memory=1" >/etc/sysctl.d/99-sysctl.conf
