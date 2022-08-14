@@ -64,6 +64,7 @@ jdk-openjdk
 jedi-language-server
 jo
 jq
+julia
 kernel-modules-hook
 libcaca
 libcanberra
@@ -105,6 +106,7 @@ noto-fonts-cjk
 noto-fonts-emoji
 npm
 odt2txt
+openblas
 openssl
 optipng
 p7zip
