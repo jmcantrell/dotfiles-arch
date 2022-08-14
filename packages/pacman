@@ -32,6 +32,7 @@ docker-compose
 edk2-ovmf
 entr
 eslint
+ethtool
 expac
 fd
 ffmpeg
