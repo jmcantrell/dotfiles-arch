@@ -7,8 +7,7 @@ set -eu
 : "$MULLVAD_ACCOUNT" "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
 
 script_file=$(mktemp -t "${0##*/}.XXXXXXXXXX")
-printf -v cleanup "rm -f %q" "$script_file"
-trap "$cleanup" INT TERM EXIT
+trap 'rm -f ${script_file@Q}' INT TERM EXIT
 
 curl -sSL -o "$script_file" https://mullvad.net/media/files/mullvad-wg.sh
 chmod +x "$script_file"

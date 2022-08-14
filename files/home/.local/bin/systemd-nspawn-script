@@ -12,8 +12,7 @@ script=$2
 shift 2
 
 temp_script=$(mktemp -p "$dir" -t script.XXXXXXXXXX)
-printf -v cleanup "rm -vf %q" "$temp_script"
-trap "$cleanup" INT TERM EXIT
+trap 'rm -vf ${temp_script@Q}' INT TERM EXIT
 
 cp -v "$script" "$temp_script"
 chmod +x "$temp_script"
