@@ -7,14 +7,13 @@ set -eu
 
 ((EUID == 0)) || exec sudo -- "$0" "$@"
 
-dir=$1
-script=$2
+dir=${1:?missing directory}
+script=${2:?missing script}
 shift 2
 
 temp_script=$(mktemp -p "$dir" -t script.XXXXXXXXXX)
 trap 'rm -vf ${temp_script@Q}' INT TERM EXIT
-
 cp -v "$script" "$temp_script"
 chmod +x "$temp_script"
 
-systemd-nspawn --directory="$dir" "/${temp_script##*/}" "$@"
+systemd-nspawn --directory="$dir" /"${temp_script##*/}" "$@"

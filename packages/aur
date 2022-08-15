@@ -1,6 +1,7 @@
 as-tree-bin
 atool-git
 btrfs-snapshots-git
+checkmake-git
 flyctl-bin
 git-archive-all
 heroku-cli-bin
