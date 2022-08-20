@@ -95,7 +95,6 @@ mtr
 mypy
 namcap
 ncdu
-neovim
 net-tools
 newsboat
 nftables
@@ -139,7 +138,6 @@ python-black
 python-build
 python-pip
 python-pudb
-python-pynvim
 python-systemd
 python-tldextract
 qemu-desktop
