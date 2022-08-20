@@ -154,6 +154,7 @@ ripgrep
 rsync
 ruby
 rust
+rust-analyzer
 seahorse
 shellcheck
 shfmt
