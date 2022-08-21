@@ -11,6 +11,6 @@ trap 'rm -f ${script_file@Q}' INT TERM EXIT
 
 curl -sSL -o "$script_file" https://mullvad.net/media/files/mullvad-wg.sh
 chmod +x "$script_file"
-echo "$MULLVAD_ACCOUNT" | "$script_file"
+"$script_file" <<<"$MULLVAD_ACCOUNT"
 
 sudo systemctl enable --now wg-quick@wg-mullvad.service

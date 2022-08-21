@@ -21,7 +21,7 @@ sed -i '\:\s/etc/securetty$:s/^#*/#/' /usr/lib/tmpfiles.d/arch.conf
 
 systemctl enable systemd-{networkd,resolved}.service
 
-echo "root:hunter2" | chpasswd
+chpasswd <<<"root:hunter2"
 
 ln -vsnf /usr/share/zoneinfo/UTC /etc/localtime
 EOF

@@ -7,4 +7,4 @@ set -eu
 pacman --sync --noconfirm --needed redis
 systemctl enable redis.service
 
-echo "vm.overcommit_memory=1" >/etc/sysctl.d/99-sysctl.conf
+printf "vm.overcommit_memory=1\n" >/etc/sysctl.d/99-sysctl.conf
