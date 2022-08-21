@@ -70,6 +70,7 @@ kernel-modules-hook
 libcaca
 libcanberra
 libjpeg-turbo
+libreoffice-fresh
 libxml2
 linux-headers
 lldb
