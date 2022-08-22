@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Show the disk usage total for all installed packages.
+#
+# Adapted from: https://bbs.archlinux.org/viewtopic.php?pid=1902844#p1902844
+# Shifted the decision on which data storage unit to use for display to `numfmt`.
+
+set -eu
+
+bytes=$(awk '/%SIZE%/ {getline; size+=$1; } END { print size }' /var/lib/pacman/local/*/desc)
+
+numfmt --to=iec "$bytes"
