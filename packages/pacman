@@ -19,6 +19,7 @@ cabal-install
 calibre
 catdoc
 ccache
+chromium
 clang
 ctags
 curl
@@ -36,6 +37,7 @@ ethtool
 expac
 fd
 ffmpeg
+firefox
 flake8
 gcr
 gdb
