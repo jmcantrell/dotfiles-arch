@@ -6,7 +6,7 @@
 set -eu
 
 temp_dir=$(mktemp -d -t "${0##*/}".XXXXXXXXXX)
-trap 'rm -rf ${temp_dir@Q}' INT TERM EXIT
+trap 'rm -rf ${temp_dir@Q}' EXIT
 
 url=https://aur.archlinux.org/cgit/aur.git/snapshot
 
