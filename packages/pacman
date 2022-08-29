@@ -138,15 +138,14 @@ progress
 pv
 pwgen
 python-adblock
+python-pynvim
 python-black
 python-build
 python-pip
 python-pudb
 python-systemd
 python-tldextract
-qemu-desktop
-qemu-img
-qemu-system-x86
+qemu-full
 qrencode
 qt5-wayland
 qt5ct
