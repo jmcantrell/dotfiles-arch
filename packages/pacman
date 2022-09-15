@@ -104,6 +104,7 @@ newsboat
 nftables
 ngrep
 nim
+nmap
 nodejs
 noto-fonts
 noto-fonts-cjk
@@ -138,11 +139,11 @@ progress
 pv
 pwgen
 python-adblock
-python-pynvim
 python-black
 python-build
 python-pip
 python-pudb
+python-pynvim
 python-systemd
 python-tldextract
 qemu-full
