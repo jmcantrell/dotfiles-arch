@@ -11,5 +11,7 @@ config_file=/usr/local/etc/mullvad/location.conf
 
 mkdir -p "$(dirname "$config_file")"
 
-printf "COUNTRY=%s\n" "$country"
-[[ -n "$city" ]] && printf "CITY=%s\n" "$city"
+{
+    printf "COUNTRY=%s\n" "$country"
+    [[ -n "$city" ]] && printf "CITY=%s\n" "$city"
+} >"$config_file"
