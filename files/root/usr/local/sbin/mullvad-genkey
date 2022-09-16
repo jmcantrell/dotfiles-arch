@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+die() {
+    printf "ERROR: %s\n" "$1" >&2
+    exit "${2:-1}"
+}
+
+account=$1
+
+private_key=$(wg genkey)
+public_key=$(wg pubkey <<<"$private_key")
+
+response=$(curl -sSL https://api.mullvad.net/wg/ -d account="$account" --data-urlencode pubkey="$public_key") || die "Unable to connect to Mullvad API"
+[[ $response =~ ^[0-9a-f:/.,]+$ ]] || die "$response"
+address=$response
+
+config_file=/usr/local/etc/mullvad.conf
+
+mkdir -p "$(dirname "$config_file")"
+
+umask 077
+
+cat >"$config_file" <<EOF
+PRIVATE_KEY=$private_key
+ADDRESS=$address
+EOF

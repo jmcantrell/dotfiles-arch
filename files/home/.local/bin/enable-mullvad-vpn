@@ -1,17 +1,8 @@
 #!/usr/bin/env bash
 
-# Install and configure the Mullvad VPN app.
+# Enable the Mullvad WireGuard VPN service.
 
-set -eu
+set -euo pipefail
 
-: "$MULLVAD_ACCOUNT" "$MULLVAD_COUNTRY" "$MULLVAD_CITY"
-
-script_file=$(mktemp -t "${0##*/}.XXXXXXXXXX")
-printf -v cleanup "rm %q" "$script_file"
-trap '$cleanup' EXIT
-
-curl -sSL -o "$script_file" https://mullvad.net/media/files/mullvad-wg.sh
-chmod +x "$script_file"
-"$script_file" <<<"$MULLVAD_ACCOUNT"
-
+mullvad-genkey "$MULLVAD_ACCOUNT"
 sudo systemctl enable --now wg-quick@wg-mullvad.service

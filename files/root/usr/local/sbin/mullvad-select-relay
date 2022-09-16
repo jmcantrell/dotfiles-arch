@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
-set -eu
+# Selects a random Mullvad relay based on optional location criteria.
+# Usage: mullvad-select-relay [country [city]]
+
+set -euo pipefail
 
 die() {
     printf "%s: line %s: %s\n" "$0" "${BASH_LINENO[0]}" "$1" >&2
     exit "${2:-1}"
 }
-
-[[ $EUID == 0 ]] || exec sudo -- "$0" "$@"
 
 country=${1:-}
 city=${2:-}
@@ -28,15 +29,12 @@ interface=wg-mullvad
 config_dir=/etc/wireguard
 config_file=$config_dir/$interface.conf
 
-relay_hostname=$(
-    curl -LsS https://api.mullvad.net/public/relays/wireguard/v1/ |
-        jq -r "${jq_options[@]}" "$jq_filter" | shuf -n1
-)
+relay_hostname=$(jq -r "${jq_options[@]}" "$jq_filter" /usr/local/share/mullvad/relays.json | shuf -n1)
 
 [[ -n $relay_hostname ]] || die "no relays found"
 
 relay_config_file=$config_dir/mullvad-${relay_hostname%-wireguard}.conf
 
-[[ -f $relay_config_file ]] || die "config file does not exist: $relay_config_file"
+[[ -f $relay_config_file ]] || die "configuration file does not exist: $relay_config_file"
 
 ln -svfn "$relay_config_file" "$config_file"

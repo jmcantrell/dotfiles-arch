@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# Generate WireGuard configuration files for Mullvad servers.
+
+set -euo pipefail
+shopt -s nullglob
+
+die() {
+    printf "ERROR: %s\n" "$1" >&2
+    exit "${2:-1}"
+}
+
+relays_file=/usr/local/share/mullvad/relays.json
+
+mkdir -p "$(dirname "$relays_file")"
+
+curl -sSL -o "$relays_file" \
+    https://api.mullvad.net/public/relays/wireguard/v1/ ||
+    die "Unable to connect to Mullvad API"
+
+conf_template='[Interface]
+PrivateKey = $PRIVATE_KEY
+Address = $ADDRESS
+DNS = $DNS
+
+[Peer]
+PublicKey = $PUBLIC_KEY
+Endpoint = $ENDPOINT
+AllowedIPs = 0.0.0.0/0, ::/0'
+
+. /usr/local/etc/mullvad.conf
+
+: "$ADDRESS" "$PRIVATE_KEY"
+
+export ADDRESS PRIVATE_KEY
+export DNS=193.138.218.74
+
+wireguard_dir=/etc/wireguard
+
+mkdir -p "$wireguard_dir"
+
+rm -f "$wireguard_dir"/mullvad-*.conf
+
+umask 077
+
+while read -r hostname && read -r public_key && read -r ipv4_addr_in; do
+    conf_file=$wireguard_dir/mullvad-${hostname%-wireguard}.conf
+    export PUBLIC_KEY=$public_key
+    export ENDPOINT=$ipv4_addr_in:51820
+    envsubst <<<"$conf_template" >"$conf_file"
+done < <(jq -r '.. | select(.hostname?) | .hostname, .public_key, .ipv4_addr_in' "$relays_file")
