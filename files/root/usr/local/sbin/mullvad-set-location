@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Configure the Mullvad VPN to limit relay selection to a location.
+
+set -euo pipefail
+
+country=${1:?missing country}
+city=${2:-}
+
+config_file=/usr/local/etc/mullvad/location.conf
+
+mkdir -p "$(dirname "$config_file")"
+
+printf "COUNTRY=%s\n" "$country"
+[[ -n "$city" ]] && printf "CITY=%s\n" "$city"

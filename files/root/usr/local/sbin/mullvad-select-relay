@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Selects a random Mullvad relay based on optional location criteria.
-# Usage: mullvad-select-relay [country [city]]
 
 set -euo pipefail
 
@@ -10,16 +9,19 @@ die() {
     exit "${2:-1}"
 }
 
-country=${1:-}
-city=${2:-}
+config_file=/usr/local/etc/mullvad/location.conf
+
+if [[ -f $config_file ]]; then
+    . "$config_file" || die "unable to source file: $config_file"
+fi
 
 declare -a jq_options=()
 
-if [[ -n $country && -n $city ]]; then
-    jq_options=(--arg country "$country" --arg city "$city")
+if [[ -v COUNTRY && -v CITY ]]; then
+    jq_options=(--arg country "$COUNTRY" --arg city "$CITY")
     jq_filter='.countries | map(select(.code == $country)) | first | .cities | map(select(.code == $city)) | first | .relays | map(.hostname) | .[]'
-elif [[ -n $country ]]; then
-    jq_options=(--arg country "$country")
+elif [[ -v COUNTRY ]]; then
+    jq_options=(--arg country "$COUNTRY")
     jq_filter='.countries | map(select(.code == $country)) | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'
 else
     jq_filter='.countries | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'

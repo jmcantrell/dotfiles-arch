@@ -6,7 +6,7 @@ set -euo pipefail
 shopt -s nullglob
 
 die() {
-    printf "ERROR: %s\n" "$1" >&2
+    printf "%s: line %s: %s\n" "$0" "${BASH_LINENO[0]}" "$1" >&2
     exit "${2:-1}"
 }
 
@@ -28,7 +28,7 @@ PublicKey = $PUBLIC_KEY
 Endpoint = $ENDPOINT
 AllowedIPs = 0.0.0.0/0, ::/0'
 
-. /usr/local/etc/mullvad.conf
+. /usr/local/etc/mullvad/client.conf
 
 : "$ADDRESS" "$PRIVATE_KEY"
 

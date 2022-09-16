@@ -3,7 +3,7 @@
 set -euo pipefail
 
 die() {
-    printf "ERROR: %s\n" "$1" >&2
+    printf "%s: line %s: %s\n" "$0" "${BASH_LINENO[0]}" "$1" >&2
     exit "${2:-1}"
 }
 
@@ -16,7 +16,7 @@ response=$(curl -sSL https://api.mullvad.net/wg/ -d account="$account" --data-ur
 [[ $response =~ ^[0-9a-f:/.,]+$ ]] || die "$response"
 address=$response
 
-config_file=/usr/local/etc/mullvad.conf
+config_file=/usr/local/etc/mullvad/client.conf
 
 mkdir -p "$(dirname "$config_file")"
 
