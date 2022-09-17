@@ -2,7 +2,7 @@
 
 # Install and configure CUPS printing.
 
-set -eu
+set -euo pipefail
 
 sudo pacman --sync --noconfirm --needed \
     cups \

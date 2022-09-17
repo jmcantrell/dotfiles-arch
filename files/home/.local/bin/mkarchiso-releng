@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-set -eu
+# Build a copy of archiso-releng.
+
+set -euo pipefail
 
 ((EUID==0)) || exec sudo -- "$0" "$@"
 

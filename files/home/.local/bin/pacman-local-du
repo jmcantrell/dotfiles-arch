@@ -5,7 +5,7 @@
 # Adapted from: https://bbs.archlinux.org/viewtopic.php?pid=1902844#p1902844
 # Shifted the decision on which data storage unit to use for display to `numfmt`.
 
-set -eu
+set -euo pipefail
 
 bytes=$(awk '/%SIZE%/ {getline; size+=$1; } END { print size }' /var/lib/pacman/local/*/desc)
 

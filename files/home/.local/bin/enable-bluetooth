@@ -2,7 +2,7 @@
 
 # Install and configure bluetooth support.
 
-set -eu
+set -euo pipefail
 
 sudo pacman --sync --noconfirm --needed blueman bluez bluez-utils
 sudo systemctl enable --now bluetooth.service

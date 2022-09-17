@@ -3,7 +3,7 @@
 # Initialize an Arch systemd-nspawn container.
 # Usage: systemd-nspawn-pacstrap [PACKAGE...]
 
-set -eu
+set -euo pipefail
 
 (( EUID == 0 )) || exec sudo -- "$0" "$@"
 

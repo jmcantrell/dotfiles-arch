@@ -3,7 +3,7 @@
 # Simple AUR package installer.
 # Usage: aur-install PACKAGE_NAME...
 
-set -eu
+set -euo pipefail
 
 temp_dir=$(mktemp -d -t "${0##*/}".XXXXXXXXXX)
 printf -v cleanup "rm -r %q" "$temp_dir"

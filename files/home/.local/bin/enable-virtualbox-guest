@@ -2,7 +2,7 @@
 
 # Configure this system as a VirtualBox guest.
 
-set -eu
+set -euo pipefail
 
 sudo pacman --sync --noconfirm --needed virtualbox-guest-utils-nox
 sudo systemctl enable --now vboxservice.service

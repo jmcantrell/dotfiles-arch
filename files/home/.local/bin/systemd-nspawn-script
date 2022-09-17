@@ -3,7 +3,7 @@
 # Execute an ad hoc script in a systemd-nspawn container.
 # Usage: systemd-nspawn-script DIRECTORY SCRIPT [ARGUMENT...]
 
-set -eu
+set -euo pipefail
 
 ((EUID == 0)) || exec sudo -- "$0" "$@"
 

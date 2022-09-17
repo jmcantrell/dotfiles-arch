@@ -2,7 +2,7 @@
 
 # Configure this system as a VirtualBox host.
 
-set -eu
+set -euo pipefail
 
 sudo pacman --sync --noconfirm --needed virtualbox virtualbox-host-modules-arch
 
