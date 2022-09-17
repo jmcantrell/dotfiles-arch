@@ -5,9 +5,15 @@
 set -euo pipefail
 shopt -s nullglob
 
+error() {
+    local format=$1
+    shift
+    printf "%s: line %d: $format\n" "$0" "${BASH_LINENO[0]}" "$@" >&2
+}
+
 die() {
-    printf "%s: line %s: %s\n" "$0" "${BASH_LINENO[0]}" "$1" >&2
-    exit "${2:-1}"
+    error "$@"
+    exit 1
 }
 
 relays_file=/usr/local/share/mullvad/relays.json
