@@ -19,7 +19,6 @@ sudo systemctl enable --now atd.service
 
 # Enable package file indexing.
 sudo systemctl enable --now pkgfile-update.timer
-sudo pkgfile --update
 
 # Enable file system indexing.
 sudo systemctl enable --now plocate-updatedb.timer
