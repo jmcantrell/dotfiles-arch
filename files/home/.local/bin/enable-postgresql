@@ -15,7 +15,7 @@ if [[ $(stat -f -c %T "$data_dir") == btrfs ]]; then
     chattr +C "$data_dir"
 fi
 
-su postgres -c "initdb --no-locale --encoding=utf-8 --pwfile=<(echo postgres) --data-checksums --pgdata=${data_dir@Q}"
+runuser postgres -c "initdb --no-locale --encoding=utf-8 --pwfile=<(echo postgres) --data-checksums --pgdata=${data_dir@Q}"
 
 set_config() {
     sed -i "/^#\?$1\b/{ s/^#//; ${2:+s:=.*:= $2:;} }" "$data_dir"/postgresql.conf
