@@ -14,7 +14,7 @@ mkdir -p "$dir"
 pacstrap -c "$dir" base "$@"
 
 systemd-nspawn -D "$dir" --console=pipe bash -s <<-EOF
-set -eu
+set -euo pipefail
 
 rm -f /{,usr/share/factory/}etc/securetty
 sed -i '\:\s/etc/securetty$:s/^#*/#/' /usr/lib/tmpfiles.d/arch.conf
