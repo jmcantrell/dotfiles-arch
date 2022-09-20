@@ -1,5 +1,9 @@
 file=/usr/share/doc/pkgfile/command-not-found."${SHELL##*/}"
-test -r "$file" && . "$file"
+
+if test -f "$file" && ! . "$file"; then
+    printf "Unable to source file: %q\n" "$file" >&2
+fi
+
 unset file
 
 # vi:ft=sh

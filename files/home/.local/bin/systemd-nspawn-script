@@ -29,6 +29,11 @@ if [[ ! -f $2 || ! -r $2 ]]; then
     exit 1
 fi
 
+if ! head -n1 "$2" | grep -q '^#!'; then
+    printf "Script has no shebang line: %q\n" "$2" >&2
+    exit 1
+fi
+
 script=$2
 
 shift 2
