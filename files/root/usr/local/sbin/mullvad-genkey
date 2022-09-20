@@ -1,25 +1,37 @@
 #!/usr/bin/env bash
 
+# Generate and register a new WireGuard key with Mullvad.
+# Usage: mullvad-genkey ACCOUNT
+
 set -euo pipefail
 
-error() {
-    local format=$1
-    shift
-    printf "%s: line %d: $format\n" "$0" "${BASH_LINENO[0]}" "$@" >&2
-}
-
-die() {
-    error "$@"
+if [[ ! -v 1 ]]; then
+    printf "The first argument must be a 16-digit account number\n" >&2
     exit 1
-}
+fi
+
+if [[ ! $1 =~ ^[0-9]{16}$ ]]; then
+    printf "Invalid account number: %s (must be a 16-digit number)\n" "$1" >&2
+    exit 1
+fi
 
 account=$1
 
 private_key=$(wg genkey)
 public_key=$(wg pubkey <<<"$private_key")
 
-response=$(curl -sSL -d account="$account" --data-urlencode pubkey="$public_key" https://api.mullvad.net/wg/) || die "Unable to connect to Mullvad API"
-[[ $response =~ ^[0-9a-f:/.,]+$ ]] || die "$response"
+response=$(
+    curl --silent --show-error --location \
+        --data account="$account" \
+        --data-urlencode pubkey="$public_key" \
+        https://api.mullvad.net/wg/
+)
+
+if [[ ! $response =~ ^[0-9a-f:/.,]+$ ]]; then
+    printf "Unexpected response from Mullvad API: %s\n" "$response" >&2
+    exit 1
+fi
+
 address=$response
 
 config_file=/usr/local/etc/mullvad/client.conf

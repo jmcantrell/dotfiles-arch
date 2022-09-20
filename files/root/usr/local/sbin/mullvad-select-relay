@@ -4,21 +4,13 @@
 
 set -euo pipefail
 
-error() {
-    local format=$1
-    shift
-    printf "%s: line %s: $format\n" "$0" "${BASH_LINENO[0]}" "$@" >&2
-}
+location_config_file=/usr/local/etc/mullvad/location.conf
 
-die() {
-    error "$@"
+unset COUNTRY CITY
+
+if [[ -f $location_config_file ]] && ! . "$location_config_file"; then
+    printf "Unable to source file: %q\n" "$location_config_file" >&2
     exit 1
-}
-
-config_file=/usr/local/etc/mullvad/location.conf
-
-if [[ -f $config_file ]]; then
-    . "$config_file" || die "unable to source file: $config_file"
 fi
 
 declare -a jq_options=()
@@ -33,16 +25,20 @@ else
     jq_filter='.countries | map(.cities) | .[] | map(.relays) | flatten | map(.hostname) | .[]'
 fi
 
-interface=wg-mullvad
-config_dir=/etc/wireguard
-config_file=$config_dir/$interface.conf
+wg_interface=mullvad
+wg_config_dir=/etc/wireguard
+wg_config_file=$wg_config_dir/$wg_interface.conf
 
-relay_hostname=$(jq -r "${jq_options[@]}" "$jq_filter" /usr/local/share/mullvad/relays.json | shuf -n1)
+if ! relay_hostname=$(jq -er "${jq_options[@]}" "$jq_filter" /usr/local/share/mullvad/relays.json | shuf -n1) || [[ -z $relay_hostname ]]; then
+    printf "No relays found%s\n" "${COUNTRY:+ for location: $COUNTRY${CITY:+ $CITY}}" >&2
+    exit 1
+fi
 
-[[ -n $relay_hostname ]] || die "no relays found"
+relay_config_file=$wg_config_dir/mullvad-${relay_hostname%-wireguard}.conf
 
-relay_config_file=$config_dir/mullvad-${relay_hostname%-wireguard}.conf
+if [[ ! -f $relay_config_file || ! -r $relay_config_file ]]; then
+    printf "File does not exist or is not readable: %q\n" "$relay_config_file" >&2
+    exit 1
+fi
 
-[[ -f $relay_config_file ]] || die "configuration file does not exist: $relay_config_file"
-
-ln -svfn "$relay_config_file" "$config_file"
+ln -vsfn "$relay_config_file" "$wg_config_file"

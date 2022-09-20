@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Install and configure a Redis server.
+
 set -euo pipefail
 
 ((EUID == 0)) || exec sudo -- "$0" "$@"
