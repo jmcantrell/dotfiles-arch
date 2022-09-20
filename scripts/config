@@ -13,7 +13,6 @@ sudo systemctl enable --now nftables.service
 
 # Enable docker daemon
 sudo systemctl enable --now docker.service
-sudo gpasswd --add "$USER" docker
 
 # Enable ad-hoc job scheduling.
 sudo systemctl enable --now atd.service
