@@ -30,7 +30,7 @@ if [[ ! -f $2 || ! -r $2 ]]; then
 fi
 
 if ! head -n1 "$2" | grep -q '^#!'; then
-    printf "Script has no shebang line: %q\n" "$2" >&2
+    printf "File has no shebang line: %q\n" "$2" >&2
     exit 1
 fi
 

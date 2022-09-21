@@ -3,5 +3,5 @@
 set -euo pipefail
 
 sudo pacman --sync --refresh --noconfirm --needed archlinux-keyring
-sudo pacman --sync --upgrade --noconfirm
+sudo pacman --sync --sysupgrade --noconfirm
 pikaur --sync --refresh --upgrade --aur --devel --keepbuilddeps --noconfirm
