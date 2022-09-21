@@ -1,4 +1,4 @@
-file=/usr/share/doc/pkgfile/command-not-found."${SHELL##*/}"
+file=/usr/share/doc/pkgfile/command-not-found.${SHELL##*/}
 
 if test -f "$file" && ! . "$file"; then
     printf "Unable to source file: %q\n" "$file" >&2
