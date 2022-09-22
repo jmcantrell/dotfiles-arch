@@ -7,7 +7,7 @@ set -euo pipefail
 
 ((EUID == 0)) || exec sudo -- "$0" "$@"
 
-if [[ ! -v 1 ]]; then
+if [[ ! -v 1 || -z $1 ]]; then
     printf "The first argument must be a directory\n" >&2
     exit 1
 fi
@@ -19,7 +19,7 @@ fi
 
 dir=$1
 
-if [[ ! -v 2 ]]; then
+if [[ ! -v 2 || -z $2 ]]; then
     printf "The second argument must be a script file\n" >&2
     exit 1
 fi
