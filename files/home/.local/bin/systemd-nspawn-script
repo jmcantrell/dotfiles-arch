@@ -7,34 +7,13 @@ set -euo pipefail
 
 ((EUID == 0)) || exec sudo -- "$0" "$@"
 
-if [[ ! -v 1 || -z $1 ]]; then
-    printf "The first argument must be a directory\n" >&2
+dir=${1:?missing container directory}
+script=${2:?missing script}
+
+if ! head -n1 "$script" | grep -q '^#!'; then
+    printf "File has no shebang line: %q\n" "$script" >&2
     exit 1
 fi
-
-if [[ ! -d $1 || ! -r $1 ]]; then
-    printf "Directory does not exist or is not readable: %q\n" "$1" >&2
-    exit 1
-fi
-
-dir=$1
-
-if [[ ! -v 2 || -z $2 ]]; then
-    printf "The second argument must be a script file\n" >&2
-    exit 1
-fi
-
-if [[ ! -f $2 || ! -r $2 ]]; then
-    printf "File does not exist or is not readable: %q\n" "$2" >&2
-    exit 1
-fi
-
-if ! head -n1 "$2" | grep -q '^#!'; then
-    printf "File has no shebang line: %q\n" "$2" >&2
-    exit 1
-fi
-
-script=$2
 
 shift 2
 

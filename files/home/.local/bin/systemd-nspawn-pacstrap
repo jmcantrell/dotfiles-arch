@@ -5,14 +5,9 @@
 
 set -euo pipefail
 
-(( EUID == 0 )) || exec sudo -- "$0" "$@"
+((EUID == 0)) || exec sudo -- "$0" "$@"
 
-if [[ ! -v 1 || -z $1 ]]; then
-    printf "The first argument must be the container directory\n" >&2
-    exit 1
-fi
-
-dir=$1
+dir=${1:?missing container directory}
 
 shift
 
