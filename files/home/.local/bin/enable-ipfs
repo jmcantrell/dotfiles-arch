@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Install and configure an IPFS daemon.
-
-set -euo pipefail
-
-sudo pacman --sync --noconfirm --needed go-ipfs
-ipfs init
-systemctl --user enable --now ipfs.service

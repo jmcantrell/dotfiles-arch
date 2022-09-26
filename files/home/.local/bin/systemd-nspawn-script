@@ -10,12 +10,12 @@ set -euo pipefail
 dir=${1:?missing container directory}
 script=${2:?missing script}
 
+shift 2
+
 if ! head -n1 "$script" | grep -q '^#!'; then
     printf "File has no shebang line: %q\n" "$script" >&2
     exit 1
 fi
-
-shift 2
 
 temp_script=$(mktemp -p "$dir" -t script.XXXXXXXXXX)
 printf -v cleanup "rm -v %q" "$temp_script"

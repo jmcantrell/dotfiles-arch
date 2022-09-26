@@ -8,7 +8,6 @@ heroku-cli-bin
 lua-format
 ncspot-bin
 ngrok
-nixfmt
 qutebrowser-git
 ranger-git
 rr

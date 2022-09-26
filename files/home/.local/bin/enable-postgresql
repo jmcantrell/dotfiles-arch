@@ -11,7 +11,7 @@ systemctl enable postgresql.service
 
 data_dir=/var/lib/postgres/data
 
-if [[ $(stat -f -c %T "$data_dir") == btrfs ]]; then
+if [[ $(stat --file-system --format %T "$data_dir") == btrfs ]]; then
     chattr +C "$data_dir"
 fi
 
