@@ -1,4 +1,5 @@
 acpi
+age
 alacritty
 alsa-utils
 archiso
@@ -27,6 +28,7 @@ deno
 devtools
 dhcping
 direnv
+dmidecode
 dnsmasq
 docker
 docker-compose
