@@ -24,7 +24,6 @@ chromium
 clang
 ctags
 curl
-deno
 devtools
 dhcping
 direnv
@@ -108,7 +107,6 @@ nftables
 ngrep
 nim
 nmap
-nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
