@@ -1,0 +1,17 @@
+define wsd_port = 3702
+
+table inet filter {
+  set wsd_prober {
+    typeof ip daddr
+    timeout 2s
+    flags dynamic,timeout
+  }
+  chain output {
+    udp dport $wsd_port update @wsd_prober { ip saddr }
+  }
+  chain input {
+    ip daddr @wsd_prober udp sport $wsd_port accept
+  }
+}
+
+# vi:ft=nftables

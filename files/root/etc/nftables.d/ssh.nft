@@ -1,0 +1,7 @@
+table inet filter {
+    chain input {
+        tcp dport ssh accept
+    }
+}
+
+# vi:ft=nftables

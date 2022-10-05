@@ -1,0 +1,7 @@
+table inet filter {
+    chain input {
+        udp dport mdns accept
+    }
+}
+
+# vi:ft=nftables
