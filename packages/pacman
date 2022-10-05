@@ -23,6 +23,7 @@ ccache
 chromium
 clang
 ctags
+cups
 curl
 devtools
 dhcping
@@ -177,6 +178,7 @@ swaybg
 swayidle
 swaylock
 sysstat
+system-config-printer
 systemd-resolvconf
 tcpdump
 termshark

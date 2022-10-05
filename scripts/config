@@ -11,6 +11,9 @@ sudo systemctl enable --now linux-modules-cleanup.service
 # Enable firewall.
 sudo systemctl enable --now nftables.service
 
+# Enable CUPS printing.
+sudo systemctl enable --now cups.socket
+
 # Enable docker daemon
 sudo systemctl enable --now docker.service
 
