@@ -4,4 +4,4 @@ set -euo pipefail
 
 sudo pacman --sync --refresh --noconfirm --needed archlinux-keyring
 sudo pacman --sync --sysupgrade --noconfirm
-pikaur --sync --refresh --upgrade --aur --devel --keepbuilddeps --noconfirm
+pikaur --sync --refresh --sysupgrade --aur --devel --keepbuilddeps --noconfirm --needed --no{edit,diff}
