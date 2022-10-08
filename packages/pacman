@@ -27,6 +27,7 @@ cups
 curl
 devtools
 dhcping
+dictd
 direnv
 dmidecode
 dnsmasq
