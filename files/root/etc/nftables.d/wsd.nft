@@ -1,16 +1,16 @@
 define wsd_port = 3702
 
 table inet filter {
-  set wsd_prober {
+  set wsd_probers {
     typeof ip daddr
     timeout 2s
     flags dynamic,timeout
   }
   chain output {
-    udp dport $wsd_port update @wsd_prober { ip saddr }
+    udp dport $wsd_port update @wsd_probers { ip saddr }
   }
   chain input {
-    ip daddr @wsd_prober udp sport $wsd_port accept
+    ip daddr @wsd_probers udp sport $wsd_port accept
   }
 }
 
