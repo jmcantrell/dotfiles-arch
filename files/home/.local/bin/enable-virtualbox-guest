@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# Configure this system as a VirtualBox guest.
-
-set -euo pipefail
-
-sudo pacman --sync --noconfirm --needed virtualbox-guest-utils-nox
-sudo systemctl enable --now vboxservice.service
-sudo gpasswd --add "$USER" vboxsf

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Show the disk usage total for all installed packages.
+# Adapted from: https://bbs.archlinux.org/viewtopic.php?pid=1902844#p1902844
+
+set -euo pipefail
+
+find /var/lib/pacman/local -mindepth 2 -maxdepth 2 -type f -name desc -print0 |
+    xargs -0 -r awk '/%SIZE%/ {getline; size+=$1} END {print size}' |
+    awk '{size+=$1} END {print size}' | numfmt --to=iec
