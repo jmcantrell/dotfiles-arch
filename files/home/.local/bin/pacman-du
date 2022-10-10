@@ -7,4 +7,5 @@ set -euo pipefail
 
 find /var/lib/pacman/local -mindepth 2 -maxdepth 2 -type f -name desc -print0 |
     xargs -0 -r awk '/%SIZE%/ {getline; size+=$1} END {print size}' |
-    awk '{size+=$1} END {print size}' | numfmt --to=iec
+    awk '{size+=$1} END {print size}' |
+    numfmt --to=iec

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Execute an ad hoc script in a systemd-nspawn container.
+# Execute a script in a systemd-nspawn container.
 # Usage: systemd-nspawn-script DIRECTORY SCRIPT [ARGUMENT...]
 
 set -euo pipefail
