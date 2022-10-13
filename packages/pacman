@@ -1,5 +1,7 @@
 acpi
 age
+airscan
+airscan-discover
 alsa-utils
 archiso
 aria2
@@ -165,9 +167,11 @@ rsync
 ruby
 rust
 rust-analyzer
+sane-airscan
 seahorse
 shellcheck
 shfmt
+simple-scan
 sipcalc
 slurp
 socat
