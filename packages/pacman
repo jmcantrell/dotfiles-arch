@@ -1,6 +1,5 @@
 acpi
 age
-alacritty
 alsa-utils
 archiso
 aria2
@@ -18,6 +17,8 @@ brightnessctl
 btop
 cabal-install
 calibre
+cargo-edit
+cargo-generate
 catdoc
 ccache
 chromium
@@ -42,6 +43,8 @@ fd
 ffmpeg
 firefox
 flake8
+foot
+foot-terminfo
 gcr
 gdb
 ghc
