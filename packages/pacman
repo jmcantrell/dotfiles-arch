@@ -82,6 +82,7 @@ libcaca
 libcanberra
 libjpeg-turbo
 libreoffice-fresh
+libsixel
 libxml2
 linux-headers
 lldb
