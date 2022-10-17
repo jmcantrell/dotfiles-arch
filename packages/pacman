@@ -47,6 +47,7 @@ firefox
 flake8
 foot
 foot-terminfo
+fzf
 gcr
 gdb
 ghc
