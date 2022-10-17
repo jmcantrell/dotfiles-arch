@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+# Show the disk usage total for all installed packages.
+# Adapted from: https://bbs.archlinux.org/viewtopic.php?pid=1902844#p1902844
+
+set -euo pipefail
+shopt -s nullglob
+
+usage="List the installed packages sorted by size.
+
+Usage:
+    ${0##*/} [OPTIONS]
+
+Options:
+    -h           show this help text and exit
+    -n NUMBER    list the top NUMBER packages"
+
+head_options=()
+
+while getopts ":n:h" option; do
+    case $option in
+    n) head_options+=(-n "$OPTARG") ;;
+    h)
+        printf "%s\n" "$usage"
+        exit 0
+        ;;
+    esac
+done
+
+field_value() {
+    grep -A1 "${2^^}" "$1" | tail -n1
+}
+
+for file in /var/lib/pacman/local/*/desc; do
+    name=$(field_value "$file" name) || continue
+    size=$(field_value "$file" size) || continue
+    printf "%s %s\n" "$name" "$size"
+done |
+    sort -k2rn | head "${head_options[@]}" |
+    while read -r name size; do
+        printf "%s %s\n" "$name" "$(numfmt --to=iec "$size")"
+    done
