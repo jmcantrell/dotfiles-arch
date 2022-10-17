@@ -84,6 +84,7 @@ libjpeg-turbo
 libreoffice-fresh
 libsixel
 libxml2
+links
 linux-headers
 lldb
 logrotate
@@ -92,7 +93,6 @@ lshw
 lsof
 lua
 luacheck
-lynx
 magic-wormhole
 mako
 man-db
