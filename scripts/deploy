@@ -3,6 +3,7 @@
 set -euo pipefail
 
 # Ensure that certain /etc/skel files don't interfere with stow's symlinks.
-rm -f ~/.bashrc ~/.bash_profile ~/.bash_logout
+rm -vf ~/.bashrc ~/.bash_profile ~/.bash_logout
 
+printf "Stowing package: %q\n" "$PWD/files/home"
 stow --no-folding --dir ./files --target ~ --restow home

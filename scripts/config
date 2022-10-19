@@ -27,8 +27,8 @@ sudo systemctl enable --now pkgfile-update.timer
 sudo systemctl enable --now plocate-updatedb.timer
 
 # Allow users in locate group to update locate database.
-sudo chgrp -R locate /var/lib/plocate
-sudo chmod -R g+w /var/lib/plocate
+sudo chgrp -vR locate /var/lib/plocate
+sudo chmod -vR g+w /var/lib/plocate
 
 # Only enable power saving if a battery exists.
 if [[ -e /sys/class/power_supply/BAT0 ]]; then
