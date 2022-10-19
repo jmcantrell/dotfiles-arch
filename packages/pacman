@@ -47,7 +47,6 @@ firefox
 flake8
 foot
 foot-terminfo
-fzf
 gcr
 gdb
 ghc
@@ -175,6 +174,7 @@ shellcheck
 shfmt
 simple-scan
 sipcalc
+skim
 slurp
 socat
 sox
@@ -198,6 +198,7 @@ texlive-latexextra
 tldr
 tmux
 traceroute
+transmission-cli
 transmission-gtk
 trash-cli
 tree
