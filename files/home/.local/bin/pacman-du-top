@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-# Show the disk usage total for all installed packages.
-# Adapted from: https://bbs.archlinux.org/viewtopic.php?pid=1902844#p1902844
+# Show disk usage for installed packages sorted by size (descending).
 
 set -euo pipefail
 shopt -s nullglob
