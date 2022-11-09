@@ -13,5 +13,3 @@ table inet filter {
     ip daddr @wsd_probers udp sport $wsd_port accept
   }
 }
-
-# vi:ft=nftables

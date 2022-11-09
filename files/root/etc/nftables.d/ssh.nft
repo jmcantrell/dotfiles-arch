@@ -3,5 +3,3 @@ table inet filter {
         tcp dport ssh accept
     }
 }
-
-# vi:ft=nftables

@@ -3,5 +3,3 @@ table inet filter {
         udp dport mdns accept
     }
 }
-
-# vi:ft=nftables

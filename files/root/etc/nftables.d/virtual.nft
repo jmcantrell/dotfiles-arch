@@ -13,5 +13,3 @@ table inet filter {
     iifname $virtual oifname $internet masquerade
   }
 }
-
-# vi:ft=nftables
