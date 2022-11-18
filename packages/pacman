@@ -215,6 +215,7 @@ usbutils
 valgrind
 vim
 vint
+wasm-pack
 websocat
 weechat
 wf-recorder
