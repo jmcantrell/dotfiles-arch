@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Initialize an Arch systemd-nspawn container.
-# Usage: systemd-nspawn-pacstrap [PACKAGE...]
+# Usage: systemd-nspawn-init [PACKAGE...]
 
 set -euo pipefail
 
