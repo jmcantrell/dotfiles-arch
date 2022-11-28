@@ -2,14 +2,14 @@ define internet = { en*, wl*, ww*, wg* }
 define virtual = { vb-*, ve-*, vz-*, docker* }
 
 table inet filter {
-  chain input {
-    iifname $virtual accept
-  }
-  chain forward {
-    iifname $virtual oifname $internet accept
-    iifname $virtual oifname $virtual accept
-  }
-  chain postrouting {
-    iifname $virtual oifname $internet masquerade
-  }
+    chain input {
+        iifname $virtual accept
+    }
+    chain forward {
+        iifname $virtual oifname $internet accept
+        iifname $virtual oifname $virtual accept
+    }
+    chain postrouting {
+        iifname $virtual oifname $internet masquerade
+    }
 }
