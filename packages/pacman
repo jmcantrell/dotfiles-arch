@@ -137,7 +137,6 @@ pass-otp
 pavucontrol
 pbzip2
 perl-image-exiftool
-pgformatter
 pigz
 pipewire
 pipewire-alsa
@@ -181,6 +180,7 @@ skim
 slurp
 socat
 sox
+sqlfluff
 sshfs
 stack
 stow
@@ -232,6 +232,7 @@ wtype
 xmlstarlet
 xorg-xwayland
 xz
+yamllint
 yq
 zathura
 zathura-cb
