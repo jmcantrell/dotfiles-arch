@@ -87,7 +87,6 @@ libjpeg-turbo
 libreoffice-fresh
 libsixel
 libxml2
-links
 linux-headers
 lldb
 logrotate
@@ -217,6 +216,7 @@ usbutils
 valgrind
 vim
 vint
+w3m
 wasm-pack
 websocat
 weechat
