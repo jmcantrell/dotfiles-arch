@@ -64,6 +64,7 @@ graphicsmagick
 grim
 gron
 haskell-language-server
+haskell-ormolu
 highlight
 hyperfine
 iftop
